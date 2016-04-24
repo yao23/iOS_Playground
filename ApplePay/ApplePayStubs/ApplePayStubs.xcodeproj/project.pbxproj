@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6237701802388003625ABC20 /* STPTestPaymentAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6237785D29496F941B34F40D /* STPTestPaymentAuthorizationViewController.m */; };
+		623778A4D2D59CFB2DA6DA14 /* STPTestDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62377A84917C2801AD4A4910 /* STPTestDataTableViewController.m */; };
+		62377B6D4CB15D60F38B6CD0 /* STPTestCardStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 62377CA963F1D288BE9F8E0D /* STPTestCardStore.m */; };
+		62377EA61FFD0CF273D407C3 /* STPTestPaymentSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 623774E727A9D65B00223EE9 /* STPTestPaymentSummaryViewController.m */; };
 		8A48A4C21CCC427600A4D5E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4C11CCC427600A4D5E0 /* main.m */; };
 		8A48A4C51CCC427600A4D5E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4C41CCC427600A4D5E0 /* AppDelegate.m */; };
 		8A48A4C81CCC427600A4D5E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4C71CCC427600A4D5E0 /* ViewController.m */; };
@@ -15,6 +19,8 @@
 		8A48A4D01CCC427600A4D5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A48A4CE1CCC427600A4D5E0 /* LaunchScreen.storyboard */; };
 		8A48A4DB1CCC427600A4D5E0 /* ApplePayStubsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4DA1CCC427600A4D5E0 /* ApplePayStubsTests.m */; };
 		8A48A4E61CCC427600A4D5E0 /* ApplePayStubsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4E51CCC427600A4D5E0 /* ApplePayStubsUITests.m */; };
+		8A48A4F61CCC472400A4D5E0 /* STPTestShippingMethodStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4F51CCC472400A4D5E0 /* STPTestShippingMethodStore.m */; };
+		8A48A4F91CCC47C800A4D5E0 /* STPTestAddressStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48A4F81CCC47C800A4D5E0 /* STPTestAddressStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62377438AA8E4F62C6429EE7 /* STPTestDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestDataTableViewController.h; sourceTree = "<group>"; };
+		623774A3397EEC1F965A7BD6 /* STPTestCardStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestCardStore.h; sourceTree = "<group>"; };
+		623774E727A9D65B00223EE9 /* STPTestPaymentSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPTestPaymentSummaryViewController.m; sourceTree = "<group>"; };
+		6237778C6762ADDD1AF13797 /* STPTestPaymentSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestPaymentSummaryViewController.h; sourceTree = "<group>"; };
+		6237785D29496F941B34F40D /* STPTestPaymentAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPTestPaymentAuthorizationViewController.m; sourceTree = "<group>"; };
+		6237797C31C88B1E8CF6BC53 /* ApplePayStubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePayStubs.h; sourceTree = "<group>"; };
+		62377A84917C2801AD4A4910 /* STPTestDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPTestDataTableViewController.m; sourceTree = "<group>"; };
+		62377CA963F1D288BE9F8E0D /* STPTestCardStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPTestCardStore.m; sourceTree = "<group>"; };
+		62377F242941C1C847620101 /* STPTestPaymentAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestPaymentAuthorizationViewController.h; sourceTree = "<group>"; };
 		8A48A4BD1CCC427600A4D5E0 /* ApplePayStubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePayStubs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48A4C11CCC427600A4D5E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A48A4C31CCC427600A4D5E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +66,11 @@
 		8A48A4E11CCC427600A4D5E0 /* ApplePayStubsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePayStubsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48A4E51CCC427600A4D5E0 /* ApplePayStubsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplePayStubsUITests.m; sourceTree = "<group>"; };
 		8A48A4E71CCC427600A4D5E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A48A4F41CCC46DD00A4D5E0 /* STPTestShippingMethodStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestShippingMethodStore.h; sourceTree = "<group>"; };
+		8A48A4F51CCC472400A4D5E0 /* STPTestShippingMethodStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPTestShippingMethodStore.m; sourceTree = "<group>"; };
+		8A48A4F71CCC47BB00A4D5E0 /* STPTestAddressStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestAddressStore.h; sourceTree = "<group>"; };
+		8A48A4F81CCC47C800A4D5E0 /* STPTestAddressStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPTestAddressStore.m; sourceTree = "<group>"; };
+		8A48A4FA1CCC47E400A4D5E0 /* STPTestDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPTestDataStore.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +98,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6237785AC4E9B6DE383A7E74 /* STPTestPayment */ = {
+			isa = PBXGroup;
+			children = (
+				8A48A4F41CCC46DD00A4D5E0 /* STPTestShippingMethodStore.h */,
+				8A48A4F51CCC472400A4D5E0 /* STPTestShippingMethodStore.m */,
+				8A48A4F71CCC47BB00A4D5E0 /* STPTestAddressStore.h */,
+				8A48A4F81CCC47C800A4D5E0 /* STPTestAddressStore.m */,
+				8A48A4FA1CCC47E400A4D5E0 /* STPTestDataStore.h */,
+				62377F242941C1C847620101 /* STPTestPaymentAuthorizationViewController.h */,
+				62377A84917C2801AD4A4910 /* STPTestDataTableViewController.m */,
+				6237778C6762ADDD1AF13797 /* STPTestPaymentSummaryViewController.h */,
+				6237797C31C88B1E8CF6BC53 /* ApplePayStubs.h */,
+				623774E727A9D65B00223EE9 /* STPTestPaymentSummaryViewController.m */,
+				6237785D29496F941B34F40D /* STPTestPaymentAuthorizationViewController.m */,
+				62377438AA8E4F62C6429EE7 /* STPTestDataTableViewController.h */,
+				623774A3397EEC1F965A7BD6 /* STPTestCardStore.h */,
+				62377CA963F1D288BE9F8E0D /* STPTestCardStore.m */,
+			);
+			path = STPTestPayment;
+			sourceTree = "<group>";
+		};
 		8A48A4B41CCC427600A4D5E0 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +151,7 @@
 				8A48A4CE1CCC427600A4D5E0 /* LaunchScreen.storyboard */,
 				8A48A4D11CCC427600A4D5E0 /* Info.plist */,
 				8A48A4C01CCC427600A4D5E0 /* Supporting Files */,
+				6237785AC4E9B6DE383A7E74 /* STPTestPayment */,
 			);
 			path = ApplePayStubs;
 			sourceTree = "<group>";
@@ -273,6 +315,12 @@
 				8A48A4C81CCC427600A4D5E0 /* ViewController.m in Sources */,
 				8A48A4C51CCC427600A4D5E0 /* AppDelegate.m in Sources */,
 				8A48A4C21CCC427600A4D5E0 /* main.m in Sources */,
+				8A48A4F61CCC472400A4D5E0 /* STPTestShippingMethodStore.m in Sources */,
+				8A48A4F91CCC47C800A4D5E0 /* STPTestAddressStore.m in Sources */,
+				623778A4D2D59CFB2DA6DA14 /* STPTestDataTableViewController.m in Sources */,
+				62377EA61FFD0CF273D407C3 /* STPTestPaymentSummaryViewController.m in Sources */,
+				6237701802388003625ABC20 /* STPTestPaymentAuthorizationViewController.m in Sources */,
+				62377B6D4CB15D60F38B6CD0 /* STPTestCardStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +544,7 @@
 				8A48A4EC1CCC427600A4D5E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A48A4ED1CCC427600A4D5E0 /* Build configuration list for PBXNativeTarget "ApplePayStubsTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +553,7 @@
 				8A48A4EF1CCC427600A4D5E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A48A4F01CCC427600A4D5E0 /* Build configuration list for PBXNativeTarget "ApplePayStubsUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +562,7 @@
 				8A48A4F21CCC427600A4D5E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
