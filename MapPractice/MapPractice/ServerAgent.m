@@ -14,7 +14,7 @@
 + (void)getParkingLocations:(void(^)(NSArray*))callback {
     NSDictionary *params = @{};
     NSString *queryParam = @"parkinglocations"; //[NSString stringWithFormat:@"?s=%@", searchTerm];
-    [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[APIAgent manager] GET:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"Response: %@", responseObject);
         callback(responseObject);
 //        NSArray *results = [responseObject objectForKey:@"Search"];
