@@ -20,6 +20,10 @@
 		8AA6C7311DBC01A60067F2C0 /* APIAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7301DBC01A60067F2C0 /* APIAgent.m */; };
 		8AA6C7341DBC01D80067F2C0 /* ServerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7331DBC01D80067F2C0 /* ServerAgent.m */; };
 		8AA6C7371DBC01FC0067F2C0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7361DBC01FC0067F2C0 /* Utility.m */; };
+		8AA6C7391DBC0B150067F2C0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6C7381DBC0B150067F2C0 /* CoreLocation.framework */; };
+		8AA6C73B1DBC0B280067F2C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6C73A1DBC0B280067F2C0 /* MapKit.framework */; };
+		8AA6C73E1DBC1BF80067F2C0 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C73D1DBC1BF80067F2C0 /* MyLocation.m */; };
+		8AA6C7401DBC1C6B0067F2C0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA6C73F1DBC1C6B0067F2C0 /* AddressBook.framework */; };
 		92B3CDF67AEC92E78F82CE86 /* libPods-MapPractice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F45E70A2F8B53093F7D5972 /* libPods-MapPractice.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,11 @@
 		8AA6C7331DBC01D80067F2C0 /* ServerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAgent.m; sourceTree = "<group>"; };
 		8AA6C7351DBC01F10067F2C0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		8AA6C7361DBC01FC0067F2C0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		8AA6C7381DBC0B150067F2C0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8AA6C73A1DBC0B280067F2C0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8AA6C73C1DBC1BED0067F2C0 /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
+		8AA6C73D1DBC1BF80067F2C0 /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
+		8AA6C73F1DBC1C6B0067F2C0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA6C7401DBC1C6B0067F2C0 /* AddressBook.framework in Frameworks */,
+				8AA6C73B1DBC0B280067F2C0 /* MapKit.framework in Frameworks */,
+				8AA6C7391DBC0B150067F2C0 /* CoreLocation.framework in Frameworks */,
 				92B3CDF67AEC92E78F82CE86 /* libPods-MapPractice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +112,9 @@
 		14F43DA66943F0EEC69AE87F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AA6C73F1DBC1C6B0067F2C0 /* AddressBook.framework */,
+				8AA6C73A1DBC0B280067F2C0 /* MapKit.framework */,
+				8AA6C7381DBC0B150067F2C0 /* CoreLocation.framework */,
 				1F45E70A2F8B53093F7D5972 /* libPods-MapPractice.a */,
 			);
 			name = Frameworks;
@@ -182,6 +197,8 @@
 				8AA6C7331DBC01D80067F2C0 /* ServerAgent.m */,
 				8AA6C7351DBC01F10067F2C0 /* Utility.h */,
 				8AA6C7361DBC01FC0067F2C0 /* Utility.m */,
+				8AA6C73C1DBC1BED0067F2C0 /* MyLocation.h */,
+				8AA6C73D1DBC1BF80067F2C0 /* MyLocation.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -383,6 +400,7 @@
 				8AA6C6FC1DBBFC5D0067F2C0 /* AppDelegate.m in Sources */,
 				8AA6C7371DBC01FC0067F2C0 /* Utility.m in Sources */,
 				8AA6C7311DBC01A60067F2C0 /* APIAgent.m in Sources */,
+				8AA6C73E1DBC1BF80067F2C0 /* MyLocation.m in Sources */,
 				8AA6C6F91DBBFC5D0067F2C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@
     NSDictionary *params = @{};
     NSString *queryParam = @"parkinglocations"; //[NSString stringWithFormat:@"?s=%@", searchTerm];
     [[APIAgent manager] GET:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"Response: %@", responseObject);
+//        NSLog(@"Response: %@", responseObject);
         callback(responseObject);
 //        NSArray *results = [responseObject objectForKey:@"Search"];
 //        if (results != nil && ![results isEqual:[NSNull null]]) {
@@ -39,17 +39,6 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
             callback(responseObject);
-//            NSDictionary *results = [responseObject objectForKey:@"Search"];
-//            if (results != nil && ![results isEqual:[NSNull null]]) {
-//                NSArray *movies = results[@"movie"];
-//                if (movies) {
-//                    callback(movies);
-//                } else {
-//                    callback(nil);
-//                }
-//            } else {
-//                callback(nil);
-//            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             #ifdef DEBUG
                 NSLog(@"ServerAgent::getParkingLocations:failure:");

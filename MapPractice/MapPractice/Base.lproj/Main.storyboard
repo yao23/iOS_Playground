@@ -14,12 +14,29 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Yz-8Z-4IV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="H78-TD-p41"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Yz-8Z-4IV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UUk-Cs-LVp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Yz-8Z-4IV" secondAttribute="bottom" id="g0f-6D-TOY"/>
+                            <constraint firstAttribute="trailing" secondItem="9Yz-8Z-4IV" secondAttribute="trailing" id="mz6-pj-dbP"/>
+                            <constraint firstItem="9Yz-8Z-4IV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="s0y-8P-PnA"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="mapView" destination="9Yz-8Z-4IV" id="Xuc-6E-YD5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
