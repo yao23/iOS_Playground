@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6237717C8F89699AB799F4B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6237747A63E28653D4A7F22A /* Podfile */; };
 		8AA6C6F91DBBFC5D0067F2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C6F81DBBFC5D0067F2C0 /* main.m */; };
 		8AA6C6FC1DBBFC5D0067F2C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C6FB1DBBFC5D0067F2C0 /* AppDelegate.m */; };
 		8AA6C6FF1DBBFC5D0067F2C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C6FE1DBBFC5D0067F2C0 /* ViewController.m */; };
@@ -16,6 +17,10 @@
 		8AA6C70A1DBBFC5D0067F2C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6C7081DBBFC5D0067F2C0 /* LaunchScreen.storyboard */; };
 		8AA6C7151DBBFC5D0067F2C0 /* MapPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7141DBBFC5D0067F2C0 /* MapPracticeTests.m */; };
 		8AA6C7201DBBFC5D0067F2C0 /* MapPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C71F1DBBFC5D0067F2C0 /* MapPracticeUITests.m */; };
+		8AA6C7311DBC01A60067F2C0 /* APIAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7301DBC01A60067F2C0 /* APIAgent.m */; };
+		8AA6C7341DBC01D80067F2C0 /* ServerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7331DBC01D80067F2C0 /* ServerAgent.m */; };
+		8AA6C7371DBC01FC0067F2C0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6C7361DBC01FC0067F2C0 /* Utility.m */; };
+		92B3CDF67AEC92E78F82CE86 /* libPods-MapPractice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F45E70A2F8B53093F7D5972 /* libPods-MapPractice.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F45E70A2F8B53093F7D5972 /* libPods-MapPractice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapPractice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		363F40C8ABC35F60527DB18E /* Pods-MapPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPractice/Pods-MapPractice.release.xcconfig"; sourceTree = "<group>"; };
+		5A829B71057E135AC6F5D3A2 /* Pods-MapPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPractice/Pods-MapPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		6237747A63E28653D4A7F22A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		8AA6C6F41DBBFC5D0067F2C0 /* MapPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA6C6F81DBBFC5D0067F2C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AA6C6FA1DBBFC5D0067F2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +62,13 @@
 		8AA6C71B1DBBFC5D0067F2C0 /* MapPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA6C71F1DBBFC5D0067F2C0 /* MapPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPracticeUITests.m; sourceTree = "<group>"; };
 		8AA6C7211DBBFC5D0067F2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AA6C72E1DBC01730067F2C0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		8AA6C72F1DBC01980067F2C0 /* APIAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIAgent.h; sourceTree = "<group>"; };
+		8AA6C7301DBC01A60067F2C0 /* APIAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIAgent.m; sourceTree = "<group>"; };
+		8AA6C7321DBC01CC0067F2C0 /* ServerAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAgent.h; sourceTree = "<group>"; };
+		8AA6C7331DBC01D80067F2C0 /* ServerAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAgent.m; sourceTree = "<group>"; };
+		8AA6C7351DBC01F10067F2C0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		8AA6C7361DBC01FC0067F2C0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B3CDF67AEC92E78F82CE86 /* libPods-MapPractice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14F43DA66943F0EEC69AE87F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F45E70A2F8B53093F7D5972 /* libPods-MapPractice.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8AA6C6EB1DBBFC5D0067F2C0 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +112,9 @@
 				8AA6C7131DBBFC5D0067F2C0 /* MapPracticeTests */,
 				8AA6C71E1DBBFC5D0067F2C0 /* MapPracticeUITests */,
 				8AA6C6F51DBBFC5D0067F2C0 /* Products */,
+				6237747A63E28653D4A7F22A /* Podfile */,
+				FF54040F67910BAA6F410D40 /* Pods */,
+				14F43DA66943F0EEC69AE87F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +131,7 @@
 		8AA6C6F61DBBFC5D0067F2C0 /* MapPractice */ = {
 			isa = PBXGroup;
 			children = (
+				8AA6C72D1DBC015E0067F2C0 /* Classes */,
 				8AA6C6FA1DBBFC5D0067F2C0 /* AppDelegate.h */,
 				8AA6C6FB1DBBFC5D0067F2C0 /* AppDelegate.m */,
 				8AA6C6FD1DBBFC5D0067F2C0 /* ViewController.h */,
@@ -143,6 +172,29 @@
 			path = MapPracticeUITests;
 			sourceTree = "<group>";
 		};
+		8AA6C72D1DBC015E0067F2C0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6C72E1DBC01730067F2C0 /* Constants.h */,
+				8AA6C72F1DBC01980067F2C0 /* APIAgent.h */,
+				8AA6C7301DBC01A60067F2C0 /* APIAgent.m */,
+				8AA6C7321DBC01CC0067F2C0 /* ServerAgent.h */,
+				8AA6C7331DBC01D80067F2C0 /* ServerAgent.m */,
+				8AA6C7351DBC01F10067F2C0 /* Utility.h */,
+				8AA6C7361DBC01FC0067F2C0 /* Utility.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		FF54040F67910BAA6F410D40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A829B71057E135AC6F5D3A2 /* Pods-MapPractice.debug.xcconfig */,
+				363F40C8ABC35F60527DB18E /* Pods-MapPractice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA6C7241DBBFC5D0067F2C0 /* Build configuration list for PBXNativeTarget "MapPractice" */;
 			buildPhases = (
+				5BE897C35C8D5FE0BA25ED6A /* [CP] Check Pods Manifest.lock */,
 				8AA6C6F01DBBFC5D0067F2C0 /* Sources */,
 				8AA6C6F11DBBFC5D0067F2C0 /* Frameworks */,
 				8AA6C6F21DBBFC5D0067F2C0 /* Resources */,
+				777FFFB917976C9A2C760638 /* [CP] Embed Pods Frameworks */,
+				DD22AED9AC3560663225F10E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +304,7 @@
 				8AA6C70A1DBBFC5D0067F2C0 /* LaunchScreen.storyboard in Resources */,
 				8AA6C7071DBBFC5D0067F2C0 /* Assets.xcassets in Resources */,
 				8AA6C7021DBBFC5D0067F2C0 /* Main.storyboard in Resources */,
+				6237717C8F89699AB799F4B1 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +324,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BE897C35C8D5FE0BA25ED6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		777FFFB917976C9A2C760638 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapPractice/Pods-MapPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD22AED9AC3560663225F10E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapPractice/Pods-MapPractice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8AA6C6F01DBBFC5D0067F2C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,7 +379,10 @@
 			files = (
 				8AA6C6FF1DBBFC5D0067F2C0 /* ViewController.m in Sources */,
 				8AA6C7051DBBFC5D0067F2C0 /* MapPractice.xcdatamodeld in Sources */,
+				8AA6C7341DBC01D80067F2C0 /* ServerAgent.m in Sources */,
 				8AA6C6FC1DBBFC5D0067F2C0 /* AppDelegate.m in Sources */,
+				8AA6C7371DBC01FC0067F2C0 /* Utility.m in Sources */,
+				8AA6C7311DBC01A60067F2C0 /* APIAgent.m in Sources */,
 				8AA6C6F91DBBFC5D0067F2C0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +522,7 @@
 		};
 		8AA6C7251DBBFC5D0067F2C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A829B71057E135AC6F5D3A2 /* Pods-MapPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MapPractice/Info.plist;
@@ -426,6 +534,7 @@
 		};
 		8AA6C7261DBBFC5D0067F2C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 363F40C8ABC35F60527DB18E /* Pods-MapPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MapPractice/Info.plist;
@@ -500,6 +609,7 @@
 				8AA6C7261DBBFC5D0067F2C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AA6C7271DBBFC5D0067F2C0 /* Build configuration list for PBXNativeTarget "MapPracticeTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +618,7 @@
 				8AA6C7291DBBFC5D0067F2C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AA6C72A1DBBFC5D0067F2C0 /* Build configuration list for PBXNativeTarget "MapPracticeUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +627,7 @@
 				8AA6C72C1DBBFC5D0067F2C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

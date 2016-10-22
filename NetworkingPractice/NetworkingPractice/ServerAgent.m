@@ -21,7 +21,7 @@
 //            NSLog(@"results: %@", results);
             callback(results);
 //            for (int i = 0; i < results.count; i++) {
-////                NSLog(@"%d: %@", (int)i, results[i]);
+//                NSLog(@"%d: %@", (int)i, results[i]);
 //                NSDictionary *movieObj = results[i];
 //                NSLog(@"%@, %@, %@, %@, %@", movieObj[@"Poster"], movieObj[@"Title"], movieObj[@"Type"], movieObj[@"Year"],
 //                    movieObj[@"imdbID"]);
@@ -36,9 +36,6 @@
             callback(nil);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        #ifdef DEBUG
-                NSLog(@"ServerAgent::getShippingLabels:failure:");
-        #endif
         [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
             NSDictionary *results = [responseObject objectForKey:@"Search"];
             if (results != nil && ![results isEqual:[NSNull null]]) {
@@ -53,7 +50,7 @@
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             #ifdef DEBUG
-                        NSLog(@"ServerAgent::getShippingLabels:failure:");
+                NSLog(@"ServerAgent::getMovie:failure:");
             #endif
             NSLog(@"ERROR: %@", error.description);
             callback(nil);
