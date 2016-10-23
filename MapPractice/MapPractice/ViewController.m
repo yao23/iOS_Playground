@@ -132,10 +132,16 @@
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:actionName0 style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action){
-                                                              // TODO: reserve
+                                                              if (curLocation.isResrved) {
+                                                                  [Utility blankAlertWithMessage:@"Oops" message:@"The parking location is reserved" owner:self];
+                                                                  return;
+                                                              }
                                                               [ServerAgent reserveParkingLocations:curLocation.id callback:^(NSInteger status) {
                                                                   if (status == 0) {
-                                                                    [Utility blankAlertWithMessage:@"Success" message:@"Reserved this parking location successfully." owner:self];
+//                                                                    NSString *msg = @"Reserved this parking location successfully.";
+                                                                    NSString *msg = [NSString stringWithFormat:@"Name: %@, ID: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
+                                                                                                               curLocation.title, curLocation.id, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
+                                                                    [Utility blankAlertWithMessage:@"Success" message:msg owner:self];
                                                                   } else {
                                                                     [Utility blankAlertWithMessage:@"Error" message:@"Try again later" owner:self];
                                                                   }
@@ -148,24 +154,6 @@
                                                           }]];
 
         [self presentViewController:alertController animated:YES completion:nil];
-    }
-    else {
-        UIAlertView *alertMsg = [[UIAlertView alloc] initWithTitle:title
-                                                           message:message
-                                                          delegate:self
-                                                 cancelButtonTitle:nil
-                                                 otherButtonTitles:actionName0, actionName1, nil];
-        alertMsg.alertViewStyle = UIAlertViewStyleDefault;
-        [alertMsg show];
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if ([title isEqualToString:@"Reserve"]) {
-        [self.navigationController popViewControllerAnimated:NO];
-    } else if ([title isEqualToString:@"Add time"]) {
-        [self.navigationController popViewControllerAnimated:NO];
     }
 }
 @end
