@@ -73,16 +73,18 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *identifier = @"MyLocation";
     if ([annotation isKindOfClass:[MyLocation class]]) {
-        MKAnnotationView *annotationView = (MKAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-        if (annotationView == nil) {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            annotationView.enabled = YES;
-            annotationView.canShowCallout = YES;
+        MKPinAnnotationView *annoView = (MKPinAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        if(!annoView) {
+            annoView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                    reuseIdentifier:identifier];
+            annoView.pinColor = MKPinAnnotationColorRed;  //or Green or Purple
+            annoView.enabled = YES;
+            annoView.canShowCallout = YES;
         } else {
-            annotationView.annotation = annotation;
+            annoView.annotation = annotation;
         }
 
-        return annotationView;
+        return annoView;
     }
 
     return nil;
