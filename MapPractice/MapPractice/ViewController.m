@@ -126,32 +126,40 @@
     NSString *message = [NSString stringWithFormat:@"Reserved: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
         reserved, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
     NSString *actionName0 = @"Reserve";
-    NSString *actionName1 = @"Add time";
+    NSString *actionName1 = @"Cancel";
     if ([UIAlertController class]) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message
                                                                           preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField* field) {
+            field.placeholder = @"Add minutes";
+        }];
         [alertController addAction:[UIAlertAction actionWithTitle:actionName0 style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action){
-                                                              if (curLocation.isResrved) {
-                                                                  [Utility blankAlertWithMessage:@"Oops" message:@"The parking location is reserved" owner:self];
-                                                                  return;
-                                                              }
-                                                              [ServerAgent reserveParkingLocations:curLocation.id callback:^(NSInteger status) {
-                                                                  if (status == 0) {
-//                                                                    NSString *msg = @"Reserved this parking location successfully.";
-                                                                    NSString *msg = [NSString stringWithFormat:@"Name: %@, ID: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
-                                                                                                               curLocation.title, curLocation.id, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
-                                                                    [Utility blankAlertWithMessage:@"Success" message:msg owner:self];
-                                                                  } else {
-                                                                    [Utility blankAlertWithMessage:@"Error" message:@"Try again later" owner:self];
-                                                                  }
-                                                              }];
-                                                          }]];
+          handler:^(UIAlertAction * action){
+//              if (curLocation.isResrved) {
+//                  [Utility blankAlertWithMessage:@"Oops" message:@"The parking location is reserved" owner:self];
+//                  return;
+//              }
+              NSInteger minutes = 0;
+              UITextField *tf = (UITextField*)alertController.textFields[0];
+              if (tf.text.length > 0) {
+                  minutes = (long)[tf.text longLongValue];
+              }
+              NSLog(@"minutes: %d", (int)minutes);
+
+              [ServerAgent reserveParkingLocations:curLocation.id minutes:minutes callback:^(NSInteger status) {
+                  if (status == 0) {
+                    NSString *msg = [NSString stringWithFormat:@"Name: %@, ID: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
+                                                               curLocation.title, curLocation.id, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
+                    [Utility blankAlertWithMessage:@"Success" message:msg owner:self];
+                  } else {
+                    [Utility blankAlertWithMessage:@"Error" message:@"Try again later" owner:self];
+                  }
+              }];
+          }]];
         [alertController addAction:[UIAlertAction actionWithTitle:actionName1 style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action){
-                                                              // TODO: add time
-                                                              [self.navigationController popViewControllerAnimated:NO];
-                                                          }]];
+          handler:^(UIAlertAction * action){
+              [self.navigationController popViewControllerAnimated:NO];
+          }]];
 
         [self presentViewController:alertController animated:YES completion:nil];
     }

@@ -30,8 +30,11 @@
     }];
 }
 
-+ (void)reserveParkingLocations:(NSNumber*)parkLotId callback:(void(^)(NSInteger))callback {
++ (void)reserveParkingLocations:(NSNumber*)parkLotId minutes:(NSInteger)minutes callback:(void(^)(NSInteger))callback {
     NSDictionary *params = @{};
+    if (minutes > 0) {
+        params = @{@"minutes": @(minutes)};
+    }
     NSString *queryParam = [NSString stringWithFormat:@"parkinglocations/%@/reserve/", parkLotId];
     [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         callback(0);
