@@ -17,27 +17,8 @@
     [[APIAgent manager] GET:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
 //        NSLog(@"Response: %@", responseObject);
         callback(responseObject);
-//        NSArray *results = [responseObject objectForKey:@"Search"];
-//        if (results != nil && ![results isEqual:[NSNull null]]) {
-//            NSLog(@"results: %@", results);
-//            callback(results);
-//            for (int i = 0; i < results.count; i++) {
-//                NSLog(@"%d: %@", (int)i, results[i]);
-//                NSDictionary *movieObj = results[i];
-//                NSLog(@"%@, %@, %@, %@, %@", movieObj[@"Poster"], movieObj[@"Title"], movieObj[@"Type"], movieObj[@"Year"],
-//                    movieObj[@"imdbID"]);
-//            }
-//            NSArray *movies = results[@"movie"];
-//            if (movies) {
-//                callback(movies);
-//            } else {
-//                callback(nil);
-//            }
-//        } else {
-//            callback(nil);
-//        }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        [[APIAgent manager] GET:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
             callback(responseObject);
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             #ifdef DEBUG
@@ -45,6 +26,24 @@
             #endif
             NSLog(@"ERROR: %@", error.description);
             callback(nil);
+        }];
+    }];
+}
+
++ (void)reserveParkingLocations:(NSNumber*)parkLotId callback:(void(^)(NSInteger))callback {
+    NSDictionary *params = @{};
+    NSString *queryParam = [NSString stringWithFormat:@"parkinglocations/%@/reserve/", parkLotId];
+    [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        callback(0);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [[APIAgent manager] POST:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            callback(0);
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            #ifdef DEBUG
+                NSLog(@"ServerAgent::reserveParkingLocations:failure:");
+            #endif
+            NSLog(@"ERROR: %@", error.description);
+            callback(1);
         }];
     }];
 }

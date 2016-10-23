@@ -10,4 +10,6 @@
 
 @interface ServerAgent : NSObject
 + (void)getParkingLocations:(void(^)(NSArray*))callback;
++ (void)reserveParkingLocations:(NSNumber*)id callback:(void(^)(NSInteger))callback;
+
 @end

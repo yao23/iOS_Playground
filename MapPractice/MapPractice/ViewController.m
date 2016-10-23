@@ -97,6 +97,16 @@
     return nil;
 }
 
+// Add the following method
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    MyLocation *location = (MyLocation*)view.annotation;
+
+//    NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+//    [location.mapItem openInMapsWithLaunchOptions:launchOptions];
+
+    [self showParkingInfo:location];
+}
+
 - (void)addAnnotation:(MKUserLocation *)userLocation {
     // Add an annotation
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
@@ -105,5 +115,57 @@
     point.subtitle = @"I'm here!!!";
 
     [_mapView addAnnotation:point];
+}
+
+- (void)showParkingInfo:(MyLocation *)curLocation {
+    NSString *reserved = @"NO";
+    if (curLocation.isResrved) {
+        reserved = @"YES";
+    }
+    NSString *title = [NSString stringWithFormat:@"Parking Location (name: %@, id: %@)", curLocation.title, curLocation.id];
+    NSString *message = [NSString stringWithFormat:@"Reserved: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
+        reserved, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
+    NSString *actionName0 = @"Reserve";
+    NSString *actionName1 = @"Add time";
+    if ([UIAlertController class]) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:actionName0 style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action){
+                                                              // TODO: reserve
+                                                              [ServerAgent reserveParkingLocations:curLocation.id callback:^(NSInteger status) {
+                                                                  if (status == 0) {
+                                                                    [Utility blankAlertWithMessage:@"Success" message:@"Reserved this parking location successfully." owner:self];
+                                                                  } else {
+                                                                    [Utility blankAlertWithMessage:@"Error" message:@"Try again later" owner:self];
+                                                                  }
+                                                              }];
+                                                          }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:actionName1 style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action){
+                                                              // TODO: add time
+                                                              [self.navigationController popViewControllerAnimated:NO];
+                                                          }]];
+
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    else {
+        UIAlertView *alertMsg = [[UIAlertView alloc] initWithTitle:title
+                                                           message:message
+                                                          delegate:self
+                                                 cancelButtonTitle:nil
+                                                 otherButtonTitles:actionName0, actionName1, nil];
+        alertMsg.alertViewStyle = UIAlertViewStyleDefault;
+        [alertMsg show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"Reserve"]) {
+        [self.navigationController popViewControllerAnimated:NO];
+    } else if ([title isEqualToString:@"Add time"]) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }
 }
 @end
