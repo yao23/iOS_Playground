@@ -40,10 +40,10 @@
 - (void)getParkingLocations {
     [ServerAgent getParkingLocations:^(NSArray *parkingLocations) {
         if (parkingLocations && ![parkingLocations isEqual:[NSNull null]]) {
-            if (parkingLocations.count > 0) {
-                NSDictionary *parkingLotObj = parkingLocations[0];
-                NSLog(@"Parking lot: %@", parkingLotObj);
-            }
+//            if (parkingLocations.count > 0) {
+//                NSDictionary *parkingLotObj = parkingLocations[0];
+//                NSLog(@"Parking lot: %@", parkingLotObj);
+//            }
 
             [self plotParkingLocations:parkingLocations];
         } else {
@@ -104,7 +104,7 @@
 //    NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
 //    [location.mapItem openInMapsWithLaunchOptions:launchOptions];
 
-    [self showParkingInfo:location];
+    [self showParkingInfo:location annotationView:view];
 }
 
 - (void)addAnnotation:(MKUserLocation *)userLocation {
@@ -117,13 +117,13 @@
     [_mapView addAnnotation:point];
 }
 
-- (void)showParkingInfo:(MyLocation *)curLocation {
+- (void)showParkingInfo:(MyLocation *)curLocation annotationView:(MKAnnotationView *)annotationView {
     NSString *reserved = @"NO";
     if (curLocation.isResrved) {
         reserved = @"YES";
     }
     NSString *title = [NSString stringWithFormat:@"Parking Location (name: %@, id: %@)", curLocation.title, curLocation.id];
-    NSString *message = [NSString stringWithFormat:@"Reserved: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
+    NSString *message = [NSString stringWithFormat:@"Reserved: %@, Cost/Minute: %@, Max Time (minutes): %@, Min Time (minutes): %@, Reserve until: %@",
         reserved, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
     NSString *actionName0 = @"Reserve";
     NSString *actionName1 = @"Cancel";
@@ -135,20 +135,21 @@
         }];
         [alertController addAction:[UIAlertAction actionWithTitle:actionName0 style:UIAlertActionStyleDefault
           handler:^(UIAlertAction * action){
-//              if (curLocation.isResrved) {
-//                  [Utility blankAlertWithMessage:@"Oops" message:@"The parking location is reserved" owner:self];
-//                  return;
-//              }
+              if (curLocation.isResrved) {
+                  [Utility blankAlertWithMessage:@"Oops" message:@"The parking location is reserved" owner:self];
+                  return;
+              }
               NSInteger minutes = 0;
               UITextField *tf = (UITextField*)alertController.textFields[0];
               if (tf.text.length > 0) {
                   minutes = (long)[tf.text longLongValue];
               }
-              NSLog(@"minutes: %d", (int)minutes);
+//              NSLog(@"minutes: %d", (int)minutes);
 
               [ServerAgent reserveParkingLocations:curLocation.id minutes:minutes callback:^(NSInteger status) {
                   if (status == 0) {
-                    NSString *msg = [NSString stringWithFormat:@"Name: %@, ID: %@, Cost/Minute: %@, Max Time: %@, Min Time: %@, Reserve until: %@",
+                    ((MKPinAnnotationView *)annotationView).pinTintColor = [UIColor redColor];
+                    NSString *msg = [NSString stringWithFormat:@"Name: %@, ID: %@, Cost/Minute: %@, Max Time (minutes): %@, Min Time (minutes): %@, Reserve until: %@",
                                                                curLocation.title, curLocation.id, curLocation.costPerMinute, curLocation.maxResrvTime, curLocation.minResrvTime, curLocation.resrvedUntil];
                     [Utility blankAlertWithMessage:@"Success" message:msg owner:self];
                   } else {
