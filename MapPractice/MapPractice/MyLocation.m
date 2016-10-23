@@ -42,11 +42,11 @@
 }
 
 - (NSString *)title {
-    return _name;
+    return [NSString stringWithFormat:@"Name: %@", _name];
 }
 
 - (NSString *)subtitle {
-    return [NSString stringWithFormat:@"%@\n%@/minute", _id, _costPerMinute];
+    return [NSString stringWithFormat:@"#%@, %@/minute", _id, _costPerMinute];
 }
 
 - (CLLocationCoordinate2D)coordinate {

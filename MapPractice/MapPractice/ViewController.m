@@ -77,7 +77,13 @@
         if(!annoView) {
             annoView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                     reuseIdentifier:identifier];
-            annoView.pinColor = MKPinAnnotationColorRed;  //or Green or Purple
+            MyLocation *curLocation = (MyLocation *)annotation;
+            if (curLocation.isResrved) {
+                annoView.pinColor = MKPinAnnotationColorRed;  // or Purple
+            } else {
+                annoView.pinColor = MKPinAnnotationColorGreen;
+            }
+
             annoView.enabled = YES;
             annoView.canShowCallout = YES;
         } else {
