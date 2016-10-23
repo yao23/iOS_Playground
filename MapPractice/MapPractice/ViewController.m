@@ -40,11 +40,6 @@
 - (void)getParkingLocations {
     [ServerAgent getParkingLocations:^(NSArray *parkingLocations) {
         if (parkingLocations && ![parkingLocations isEqual:[NSNull null]]) {
-//            if (parkingLocations.count > 0) {
-//                NSDictionary *parkingLotObj = parkingLocations[0];
-//                NSLog(@"Parking lot: %@", parkingLotObj);
-//            }
-
             [self plotParkingLocations:parkingLocations];
         } else {
             [Utility blankAlertWithMessage:@"Error" message:@"Try again later" owner:self];
@@ -144,7 +139,6 @@
               if (tf.text.length > 0) {
                   minutes = (long)[tf.text longLongValue];
               }
-//              NSLog(@"minutes: %d", (int)minutes);
 
               [ServerAgent reserveParkingLocations:curLocation.id minutes:minutes callback:^(NSInteger status) {
                   if (status == 0) {
