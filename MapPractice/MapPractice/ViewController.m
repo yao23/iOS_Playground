@@ -79,13 +79,14 @@
                                                     reuseIdentifier:identifier];
             MyLocation *curLocation = (MyLocation *)annotation;
             if (curLocation.isResrved) {
-                annoView.pinColor = MKPinAnnotationColorRed;  // or Purple
+                annoView.pinTintColor = [UIColor redColor];
             } else {
-                annoView.pinColor = MKPinAnnotationColorGreen;
+                annoView.pinTintColor = [UIColor greenColor];
             }
 
             annoView.enabled = YES;
             annoView.canShowCallout = YES;
+            annoView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         } else {
             annoView.annotation = annotation;
         }
