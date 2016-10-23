@@ -15,7 +15,7 @@
     NSDictionary *params = @{};
     NSString *queryParam = @"parkinglocations"; //[NSString stringWithFormat:@"?s=%@", searchTerm];
     [[APIAgent manager] GET:queryParam parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-//        NSLog(@"Response: %@", responseObject);
+        NSLog(@"Response: %@", responseObject);
         callback(responseObject);
 //        NSArray *results = [responseObject objectForKey:@"Search"];
 //        if (results != nil && ![results isEqual:[NSNull null]]) {

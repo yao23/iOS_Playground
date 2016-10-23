@@ -46,7 +46,7 @@
 }
 
 - (NSString *)subtitle {
-    return _address;
+    return [NSString stringWithFormat:@"%@\n%@/minute", _id, _costPerMinute];
 }
 
 - (CLLocationCoordinate2D)coordinate {

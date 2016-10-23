@@ -28,10 +28,12 @@
 }
 
 - (void)setDefaulLocation {
+    double lat = 37.740288; // 37.7749, 37.787359
+    double lng = -122.465570; // -122.4194, -122.408227
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager requestAlwaysAuthorization];
     MKCoordinateRegion region = [_mapView
-            regionThatFits:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37.7749, -122.4194), 200, 200)];
+            regionThatFits:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(lat, lng), 200, 200)];
     [_mapView setRegion:region animated:YES];
 }
 
@@ -64,6 +66,8 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
     [_mapView setRegion:[_mapView regionThatFits:region] animated:YES];
+
+    [self addAnnotation:userLocation];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -82,16 +86,6 @@
     }
 
     return nil;
-}
-
-- (void)startLocationManager {
-    _locationManager = [[CLLocationManager alloc] init];
-    _locationManager.delegate = self;
-    _locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-
-    [_locationManager startUpdatingLocation];
-    [_locationManager requestWhenInUseAuthorization]; // Add This Line
 }
 
 - (void)addAnnotation:(MKUserLocation *)userLocation {
