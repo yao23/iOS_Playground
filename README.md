@@ -5,9 +5,9 @@ Setup instructions:
 
 Clone this repository and open the MapPractice directory in XCode. Then run on any device or simulator, the example is tested successfully on iPhone 6 Plus.
 
-RideCellParking is a simple app built off of the RideCell parking locations API: http://ridecellparking.herokuapp.com/api/v1/parkinglocations
+MapPractice is a simple app built with the RideCell parking locations API: http://ridecellparking.herokuapp.com/api/v1/parkinglocations
 
-Users can view potential parking spots in San Francisco, whether or not they're available, as well as reserve them for a particular time period.
+Users can view potential parking loations in San Francisco, whether or not they're available (green for availalbe, red for not), as well as reserve them for a particular time period.
 
 Use Cases
 - View all available street parking locations on a map.
