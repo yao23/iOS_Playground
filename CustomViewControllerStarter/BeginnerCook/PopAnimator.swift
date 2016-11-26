@@ -27,12 +27,9 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let initialFrame = presenting ? originFrame : herbView.frame
         let finalFrame = presenting ? herbView.frame : originFrame
 
-        print("init: \(initialFrame)")
-        print("final: \(finalFrame)")
         let xScaleFactor = presenting ? initialFrame.width / finalFrame.width : finalFrame.width / initialFrame.width
         let yScaleFactor = presenting ? initialFrame.height / finalFrame.height : finalFrame.height / initialFrame.height
 
-        print("x: \(xScaleFactor), y: \(yScaleFactor)")
         let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
 
         if presenting {
