@@ -54,6 +54,17 @@ class ViewController: UIViewController {
     return .lightContent
   }
 
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    coordinator.animate(
+            alongsideTransition: {context in
+              self.bgImage.alpha = (size.width>size.height) ? 0.25 : 0.55
+              self.positionListItems()
+            },
+            completion: nil
+    )
+  }
+
   //MARK: View setup
   
   //add all images to the list
