@@ -20,13 +20,33 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
         let toView = transitionContext.view(forKey: .to)!
+        let herbView = presenting ? toView :
+                transitionContext.view(forKey: .from)!
+
+        let initialFrame = presenting ? originFrame : herbView.frame
+        let finalFrame = presenting ? herbView.frame : originFrame
+
+        let xScaleFactor = presenting ? initialFrame.width / finalFrame.width : finalFrame.width / initialFrame.width
+        let yScaleFactor = presenting ? initialFrame.height / finalFrame.height : finalFrame.height / initialFrame.height
+
+        let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
+
+        if presenting {
+            herbView.transform = scaleTransform
+            herbView.center = CGPoint(x: initialFrame.midX, y: initialFrame.midY)
+            herbView.clipsToBounds = true
+        }
+
         containerView.addSubview(toView)
-        toView.alpha = 0.0
-        UIView.animate(withDuration: duration,
+        containerView.bringSubview(toFront: herbView)
+
+        UIView.animate(withDuration: duration, delay:0.0,
+                usingSpringWithDamping: 0.4, initialSpringVelocity: 0.0,
                 animations: {
-                    toView.alpha = 1.0
+                    herbView.transform = self.presenting ? CGAffineTransform.identity : scaleTransform
+                    herbView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
                 },
-                completion: { _ in
+                completion:{_ in
                     transitionContext.completeTransition(true)
                 }
         )
