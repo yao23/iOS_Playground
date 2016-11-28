@@ -27,12 +27,12 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func saveName(name: String) {
         //1
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
 
         //2
-        let entity =  NSEntityDescription.entityForName("Person", inManagedObjectContext:managedContext)
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let entity =  NSEntityDescription.entity(forEntityName:"Person", in:managedContext)
+        let person = NSManagedObject.init(entity: entity!, insertInto: managedContext)
 
         //3
         person.setValue(name, forKey: "name")
