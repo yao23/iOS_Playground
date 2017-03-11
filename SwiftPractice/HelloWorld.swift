@@ -96,3 +96,8 @@ func greet(person: String, day: String) -> String {
     return "Hello \(person), today is \(day)."
 }
 print(greet(person: "Bob", day: "Tuesday"))
+
+func greet(_ person: String, on day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+greet("John", on: "Wednesday")
