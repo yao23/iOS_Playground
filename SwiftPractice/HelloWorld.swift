@@ -40,3 +40,17 @@ for score in individualScores {
     }
 }
 print(teamScore)
+
+
+var optionalString: String? = "Hello"
+print(optionalString == nil)
+ 
+var optionalName: String? = "John Appleseed"
+// optionalName = nil
+var greeting = "Hello!"
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+} else {
+	greeting = "Hello, nobody"
+}
+print(greeting)
