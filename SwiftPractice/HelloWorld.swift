@@ -121,3 +121,13 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
 let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
 print(statistics.sum)
 print(statistics.2)
+
+func sumOf(numbers: Int...) -> Int {
+    var sum = 0
+    for number in numbers {
+        sum += number
+    }
+    return sum
+}
+sumOf()
+sumOf(numbers: 42, 597, 12)
