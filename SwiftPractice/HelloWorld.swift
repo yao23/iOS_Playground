@@ -1,5 +1,6 @@
 print("Hello world!")
 
+// Simple Value
 var myVariable = 42
 myVariable = 50
 let myConstant = 42
@@ -30,6 +31,7 @@ occupations["Jayne"] = "Public Relations"
 print(shoppingList)
 print(occupations)
 
+// Control Flow
 let individualScores = [75, 43, 103, 87, 12]
 var teamScore = 0
 for score in individualScores {
@@ -92,6 +94,7 @@ for i in 0..<4 {
 }
 print(total)
 
+// Function and Closure
 func greet(person: String, day: String) -> String {
     return "Hello \(person), today is \(day)."
 }
@@ -172,3 +175,8 @@ numbers.map({ (number: Int) -> Int in
 
 let mappedNumbers = numbers.map({ number in 3 * number })
 print(mappedNumbers)
+
+let sortedNumbers = numbers.sorted { $0 > $1 }
+print(sortedNumbers)
+
+// Objects and Classes
