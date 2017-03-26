@@ -12,6 +12,7 @@ import CoreLocation
 class Restaurant: NSObject {
     var name : String
     var distance : String
+    var numAttribute: Int
 
     init(jsonData : [String: Any]) {
         name = jsonData["name"] as! String
@@ -26,6 +27,8 @@ class Restaurant: NSObject {
         let distanceInMeters = coordinate0.distance(from: coordinate1) // result is in meters
         let distanceInMiles : Float = Float(distanceInMeters / 1609);
         distance = String(distanceInMiles) // wrong distance in XCode simulator
+
+        numAttribute = 2
     }
 
     func printInfo() {

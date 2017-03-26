@@ -13,6 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     let apiKey : String = "AIzaSyCqIvNrJKAjiRzdg6QlcFjTY_eD7PaaPzo"
     var restaurants : [Restaurant] = []
+    var selectedRestaurant : Restaurant?
     var keyWord : String = ""
 
     // Apple headquarter as default location, Cupertino, CA
@@ -184,10 +185,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("click at index: \(indexPath.row)")
-        let restaurant : Restaurant = restaurants[indexPath.row]
+        print("click at restaurant index: \(indexPath.row)")
+        selectedRestaurant = restaurants[indexPath.row]
         print("click at restaurant: ")
-        restaurant.printInfo()
+        selectedRestaurant!.printInfo()
+
+        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
 
     // MARK: UISearch​Bar​Delegate
@@ -203,6 +206,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showDetail") {
+            let destinationVC = segue.destination as! UINavigationController
+            let detailVC = destinationVC.viewControllers[0] as! DetailViewController
+            detailVC.updateRestaurant(restaurant: self.selectedRestaurant!)
+        }
     }
 }
 
