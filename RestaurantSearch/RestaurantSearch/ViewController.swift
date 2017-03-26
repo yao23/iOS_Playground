@@ -210,8 +210,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showDetail") {
-            let destinationVC = segue.destination as! UINavigationController
-            let detailVC = destinationVC.viewControllers[0] as! DetailViewController
+            let detailVC = segue.destination as! DetailViewController
             detailVC.updateRestaurant(restaurant: self.selectedRestaurant!)
         }
     }

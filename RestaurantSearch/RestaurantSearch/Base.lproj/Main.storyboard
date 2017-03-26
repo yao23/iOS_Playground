@@ -77,7 +77,17 @@
                             <constraint firstItem="Keu-b7-g6T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rYN-7b-xpU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VGh-b2-nsq"/>
+                    <navigationItem key="navigationItem" id="VGh-b2-nsq">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lIV-0z-eXW">
+                            <rect key="frame" x="88" y="7" width="200" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="RESTAURANT SEARCH">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Keu-b7-g6T" id="KsH-xo-uvV"/>
                         <outlet property="tableView" destination="3MR-Bs-72s" id="IT4-0G-zPe"/>
@@ -134,7 +144,8 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mef-Lo-LFw">
                                 <rect key="frame" x="16" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="&lt;">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -145,6 +156,7 @@
                         <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oop-8G-ZbE">
                             <rect key="frame" x="113" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="DETAILS">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
