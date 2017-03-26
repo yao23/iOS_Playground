@@ -12,6 +12,9 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     let apiKey : String = "AIzaSyCqIvNrJKAjiRzdg6QlcFjTY_eD7PaaPzo"
+    var restaurants : [Restaurant] = []
+
+    // Apple headquarter as default location, Cupertino, CA
     var lat : float_t = 37.3230
     var lon : float_t =  -122.0322
     let locationManager = CLLocationManager()
@@ -97,16 +100,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
                 print("response: \(json)")
 
-//                guard let rows = json?["rows"] as? [[String: Any]] else {
-//                    print("Malformed data received from fetch restaurants service")
-//                    return
-//                }
+                guard let results = json?["results"] as? [[String: Any]] else {
+                    print("Malformed data received from fetch restaurants service")
+                    return
+                }
 
-//                let rooms = rows.flatMap({ (roomDict) -> RemoteRoom? in
-//                    return RemoteRoom(jsonData: roomDict)
-//                })
+                self.restaurants = results.flatMap({ (resultDict) -> Restaurant? in
+                    return Restaurant(jsonData: resultDict)
+                })
 
-//                completion(rooms)
+                self.restaurants.flatMap({ (restaurant) in
+                    restaurant.printInfo()
+                })
             }
 
             task.resume()
