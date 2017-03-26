@@ -10,7 +10,7 @@ import UIKit
 //import Alamofire
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
     let apiKey : String = "AIzaSyCqIvNrJKAjiRzdg6QlcFjTY_eD7PaaPzo"
     var restaurants : [Restaurant] = []
 
@@ -18,6 +18,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var lat : float_t = 37.3230
     var lon : float_t =  -122.0322
     let locationManager = CLLocationManager()
+
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         return
                     }
 
+                    print("response: \(json)")
+
 //                    let rooms = rows.flatMap({ (roomDict) -> RemoteRoom? in
 //                        return RemoteRoom(jsonData: roomDict)
 //                    })
@@ -98,8 +102,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     return
                 }
 
-                print("response: \(json)")
-
                 guard let results = json?["results"] as? [[String: Any]] else {
                     print("Malformed data received from fetch restaurants service")
                     return
@@ -109,9 +111,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     return Restaurant(jsonData: resultDict)
                 })
 
-                self.restaurants.flatMap({ (restaurant) in
-                    restaurant.printInfo()
-                })
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
 
             task.resume()
@@ -151,5 +153,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         self.getRestaurant()
     }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return restaurants.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath)
+
+        let restaurant : Restaurant = restaurants[indexPath.row]
+        cell.textLabel!.text = restaurant.name
+        cell.detailTextLabel!.text = (restaurant.distance + "miles far away")
+//        cell.imageView.image = nil  // TODO: add image in async way
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let restaurant : Restaurant = restaurants[indexPath.row]
+        print("click at restaurant: " + restaurant.name)
+    }
+
 }
 
