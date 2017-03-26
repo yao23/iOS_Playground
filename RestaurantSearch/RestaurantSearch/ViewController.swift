@@ -10,7 +10,7 @@ import UIKit
 //import Alamofire
 import CoreLocation
 
-class ViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
     let apiKey : String = "AIzaSyCqIvNrJKAjiRzdg6QlcFjTY_eD7PaaPzo"
     var restaurants : [Restaurant] = []
     var keyWord : String = ""
@@ -51,12 +51,10 @@ class ViewController: UIViewController, UITableViewDataSource, CLLocationManager
         let keyWordParam : String = "&keyword=" + keyWord
         // http://stackoverflow.com/questions/24551816/swift-encode-url
         let escapedKeyWordParam = keyWordParam.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        print("escaped string: " + escapedKeyWordParam!)
         let apiKeyParam : String = "&key=" + apiKey
         let params : String = locationParam + radiusParam + typeParam + escapedKeyWordParam! + apiKeyParam
         let baseUrl : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
         let urlStr : String = baseUrl + params
-        print("URL: " + urlStr)
         let url = URL(string: urlStr)
 //        let urlStr : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=cruise&key=YOUR_API_KEY"
 
@@ -186,6 +184,7 @@ class ViewController: UIViewController, UITableViewDataSource, CLLocationManager
 
     // MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("click at index: \(indexPath.row)")
         let restaurant : Restaurant = restaurants[indexPath.row]
         print("click at restaurant: ")
         restaurant.printInfo()
