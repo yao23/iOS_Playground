@@ -10,6 +10,9 @@
 		8A4F6A281E86F07200D8E399 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F6A271E86F07200D8E399 /* Podfile */; };
 		8A4F6A291E86F07200D8E399 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F6A271E86F07200D8E399 /* Podfile */; };
 		8A4F6A2A1E86F07200D8E399 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F6A271E86F07200D8E399 /* Podfile */; };
+		8A4F6A2D1E86F5BE00D8E399 /* APIAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F6A2C1E86F5BE00D8E399 /* APIAgent.swift */; };
+		8A4F6A2E1E86F5BE00D8E399 /* APIAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F6A2C1E86F5BE00D8E399 /* APIAgent.swift */; };
+		8A4F6A2F1E86F5BE00D8E399 /* APIAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F6A2C1E86F5BE00D8E399 /* APIAgent.swift */; };
 		8A99C2BD1E86408500522847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99C2BC1E86408500522847 /* AppDelegate.swift */; };
 		8A99C2BF1E86408500522847 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99C2BE1E86408500522847 /* ViewController.swift */; };
 		8A99C2C21E86408500522847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A99C2C01E86408500522847 /* Main.storyboard */; };
@@ -40,6 +43,7 @@
 /* Begin PBXFileReference section */
 		223B838A3103B4586F64FFCF /* Pods-RestaurantSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-RestaurantSearch/Pods-RestaurantSearch.release.xcconfig"; sourceTree = "<group>"; };
 		8A4F6A271E86F07200D8E399 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8A4F6A2C1E86F5BE00D8E399 /* APIAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAgent.swift; sourceTree = "<group>"; };
 		8A99C2B91E86408500522847 /* RestaurantSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A99C2BC1E86408500522847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A99C2BE1E86408500522847 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A4F6A2B1E86F59E00D8E399 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8A4F6A2C1E86F5BE00D8E399 /* APIAgent.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		8A99C2B01E86408500522847 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 		8A99C2BB1E86408500522847 /* RestaurantSearch */ = {
 			isa = PBXGroup;
 			children = (
+				8A4F6A2B1E86F59E00D8E399 /* Delegate */,
 				8A99C2BC1E86408500522847 /* AppDelegate.swift */,
 				8A99C2BE1E86408500522847 /* ViewController.swift */,
 				8A99C2C01E86408500522847 /* Main.storyboard */,
@@ -342,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4F6A2D1E86F5BE00D8E399 /* APIAgent.swift in Sources */,
 				8A99C2BF1E86408500522847 /* ViewController.swift in Sources */,
 				8A99C2BD1E86408500522847 /* AppDelegate.swift in Sources */,
 			);
@@ -351,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4F6A2E1E86F5BE00D8E399 /* APIAgent.swift in Sources */,
 				8A99C2D21E86408600522847 /* RestaurantSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4F6A2F1E86F5BE00D8E399 /* APIAgent.swift in Sources */,
 				8A99C2DD1E86408600522847 /* RestaurantSearchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
