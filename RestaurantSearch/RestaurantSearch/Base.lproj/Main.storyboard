@@ -21,8 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-b7-g6T">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LUR-Ty-Mxt"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mTu-fw-gyz"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3MR-Bs-72s">
-                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RestaurantCell" textLabel="TQ4-0G-Hja" detailTextLabel="5Mp-G0-OsS" style="IBUITableViewCellStyleSubtitle" id="u2H-yU-pqr">
@@ -58,13 +68,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3MR-Bs-72s" firstAttribute="top" secondItem="Keu-b7-g6T" secondAttribute="bottom" constant="5" id="63f-qf-INw"/>
                             <constraint firstItem="3MR-Bs-72s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9q6-pP-cb2"/>
+                            <constraint firstItem="Keu-b7-g6T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GLA-Uk-dl1"/>
+                            <constraint firstAttribute="trailing" secondItem="Keu-b7-g6T" secondAttribute="trailing" id="Oup-Ha-EDj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3MR-Bs-72s" secondAttribute="bottom" id="c25-uo-ecb"/>
                             <constraint firstAttribute="trailing" secondItem="3MR-Bs-72s" secondAttribute="trailing" id="cNQ-pi-ZK6"/>
-                            <constraint firstItem="3MR-Bs-72s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="qSW-Cy-sEt"/>
+                            <constraint firstItem="Keu-b7-g6T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rYN-7b-xpU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="Keu-b7-g6T" id="KsH-xo-uvV"/>
                         <outlet property="tableView" destination="3MR-Bs-72s" id="IT4-0G-zPe"/>
                     </connections>
                 </viewController>

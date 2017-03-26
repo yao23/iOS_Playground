@@ -13,12 +13,14 @@ import CoreLocation
 class ViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
     let apiKey : String = "AIzaSyCqIvNrJKAjiRzdg6QlcFjTY_eD7PaaPzo"
     var restaurants : [Restaurant] = []
+    var keyWord : String = ""
 
     // Apple headquarter as default location, Cupertino, CA
     var lat : float_t = 37.3230
     var lon : float_t =  -122.0322
     let locationManager = CLLocationManager()
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -35,14 +37,27 @@ class ViewController: UIViewController, UITableViewDataSource, CLLocationManager
     }
 
     func getRestaurant() {
-//        var lat : float_t = -33.8670522
-//        var lon : float_t = 151.1957362
-//        var radius : Int = 500
-//        var type : String = "restaurant"
-//        var keyWord : String = "Korean Restaurant"
-//        var params : String = "location=" + lat  + "," + lon + "&radius=" + radius + "&type=" + type + "&keyword=" + keyWord + "&key" + apiKey
-//        var baseUrl : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-//        let urlStr : String = baseUrl + params
+        let lat : float_t = -33.8670522
+        let lon : float_t = 151.1957362
+        let radius : Int = 5000
+        let type : String = "restaurant"
+        if (keyWord.isEmpty) {
+            keyWord = "Korean Restaurant"
+            searchBar.text = keyWord
+        }
+        let locationParam : String = "location=\(lat),\(lon)"
+        let radiusParam : String = "&radius=\(radius)"
+        let typeParam : String = "&type=" + type
+        let keyWordParam : String = "&keyword=" + keyWord
+        // http://stackoverflow.com/questions/24551816/swift-encode-url
+        let escapedKeyWordParam = keyWordParam.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        print("escaped string: " + escapedKeyWordParam!)
+        let apiKeyParam : String = "&key=" + apiKey
+        let params : String = locationParam + radiusParam + typeParam + escapedKeyWordParam! + apiKeyParam
+        let baseUrl : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+        let urlStr : String = baseUrl + params
+        print("URL: " + urlStr)
+        let url = URL(string: urlStr)
 //        let urlStr : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=cruise&key=YOUR_API_KEY"
 
     /*
@@ -78,10 +93,10 @@ class ViewController: UIViewController, UITableViewDataSource, CLLocationManager
                 */
 
 
-            let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCykL88HIABtiuzvq0qebtxVkYob2lAszc")!
+//            let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCykL88HIABtiuzvq0qebtxVkYob2lAszc")!
 
             var urlRequest = URLRequest(
-                    url: url,
+                    url: url!,
                     cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                     timeoutInterval: 10.0 * 1000)
             urlRequest.httpMethod = "GET"
@@ -154,6 +169,7 @@ class ViewController: UIViewController, UITableViewDataSource, CLLocationManager
         self.getRestaurant()
     }
 
+    // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurants.count
     }
@@ -163,15 +179,31 @@ class ViewController: UIViewController, UITableViewDataSource, CLLocationManager
 
         let restaurant : Restaurant = restaurants[indexPath.row]
         cell.textLabel!.text = restaurant.name
-        cell.detailTextLabel!.text = (restaurant.distance + "miles far away")
+        cell.detailTextLabel!.text = (restaurant.distance + " miles")
 //        cell.imageView.image = nil  // TODO: add image in async way
         return cell
     }
 
+    // MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let restaurant : Restaurant = restaurants[indexPath.row]
-        print("click at restaurant: " + restaurant.name)
+        print("click at restaurant: ")
+        restaurant.printInfo()
     }
 
+    // MARK: UISearch​Bar​Delegate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // TODO: show recommended results in real time
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        keyWord = searchBar.text!
+        self.getRestaurant()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
 }
 
