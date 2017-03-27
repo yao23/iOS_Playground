@@ -152,7 +152,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("fail to get location")
         locationManager.stopUpdatingLocation()
-        if ((error) != nil) {
+        if (error != nil) {
             print(error)
         }
     }
