@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Alamofire
+import Alamofire
 import CoreLocation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view, typically from a nib.
 
         self.getRestaurant()
+        self.getRestaurantV1()
 //        self.getLocationService()
     }
 
@@ -95,6 +96,91 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
 
         task.resume()
+    }
+
+    func getRestaurantV1() {
+        let lat : float_t = -33.8670522
+        let lon : float_t = 151.1957362
+        let radius : Int = 5000
+        let type : String = "restaurant"
+        if (keyWord.isEmpty) {
+            keyWord = "Korean Restaurant"
+            searchBar.text = keyWord
+        }
+        let locationParam : String = "location=\(lat),\(lon)"
+        let radiusParam : String = "&radius=\(radius)"
+        let typeParam : String = "&type=" + type
+        let keyWordParam : String = "&keyword=" + keyWord
+        // http://stackoverflow.com/questions/24551816/swift-encode-url
+        let escapedKeyWordParam = keyWordParam.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let apiKeyParam : String = "&key=" + apiKey
+        let params : String = locationParam + radiusParam + typeParam + escapedKeyWordParam! + apiKeyParam
+        let baseUrl : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        let urlStr : String = baseUrl + params
+        let url = URL(string: urlStr)
+
+
+        Alamofire.request("https://httpbin.org/get").responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
+
+        let parameters: Parameters = [
+                "location": "\(lat),\(lon)",
+                "radius": "\(radius)",
+                "type": type,
+                "keyword": keyWord,
+                "key": apiKey
+        ]
+
+        Alamofire.request(baseUrl, parameters: parameters).responseJSON { response in
+            print("finish restaurant searching request")
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            } else {
+                print("Response: \(response)")
+            }
+        }
+/*
+        Alamofire.request(
+                        baseUrl,
+                        method: .get,
+                        parameters: ["location": (lat  + "," + lon), "radius": radius, "type": type, "keyword": keyWord, "key": apiKey],
+                        encoding: JSONEncoding.default,
+                        headers: nil)
+                .validate()
+                .responseJSON { (response) -> Void in
+                    guard response.result.isSuccess else {
+                        print("Error while fetching restaurants: \(response.result.error)")
+                        return
+                    }
+
+                    guard let value = response.result.value as? [String: Any],
+                          print("response: " + value)/*let rows = value["rows"] as? [[String: Any]]*/ else {
+                        print("Malformed data received from fetch restaurants service")
+                        return
+                    }
+
+                    print("response: \(value)")
+
+//                    let rooms = rows.flatMap({ (roomDict) -> RemoteRoom? in
+//                        return RemoteRoom(jsonData: roomDict)
+//                    })
+
+//                    completion(rooms)
+
+                }*/
     }
 
     func getLocationService() {
