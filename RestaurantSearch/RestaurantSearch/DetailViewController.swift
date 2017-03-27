@@ -67,7 +67,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func backTapped(_ sender: Any) {
-        print("go back")
         self.navigationController!.popToRootViewController(animated: true)
     }
 }
