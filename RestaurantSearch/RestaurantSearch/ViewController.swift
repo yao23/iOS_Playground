@@ -28,8 +28,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-//        self.getRestaurant()
-        self.getRestaurantV1()
+//        self.getRestaurant() // use URLSession
+        self.getRestaurantV1() // use Alamofire
 //        self.getLocationService()
     }
 
