@@ -7,15 +7,3 @@ target 'RestaurantSearch' do
   pod 'SwiftyJSON', '~> 3.1'
   pod 'AlamofireObjectMapper', '~> 4.0'
 end
-
-target 'RestaurantSearchTests' do
-  pod 'Alamofire', '~> 4.4'
-  pod 'SwiftyJSON', '~> 3.1'
-  pod 'AlamofireObjectMapper', '~> 4.0'
-end
-
-target 'RestaurantSearchUITests' do
-  pod 'Alamofire', '~> 4.4'
-  pod 'SwiftyJSON', '~> 3.1'
-  pod 'AlamofireObjectMapper', '~> 4.0'
-end

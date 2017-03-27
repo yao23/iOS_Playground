@@ -9,6 +9,7 @@
 import Foundation
 import AlamofireObjectMapper
 
+/*
 class RestaurantJSON: Mappable {
     var geometry : Geometry
 
@@ -48,3 +49,4 @@ class Location: Mappable {
         lng <- map["lng"]
     }
 }
+*/
