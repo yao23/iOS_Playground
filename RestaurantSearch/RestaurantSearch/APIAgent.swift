@@ -7,10 +7,11 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
+import SwiftyJSON
 
-class APIAgent : NSObject {/*
-    class func requestGETURL(_ strURL: String, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void) {
+class APIAgent : NSObject {
+    class func requestGETURL(_ strURL: String, params : [String : Any]?, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void) {
         Alamofire.request(strURL).responseJSON { (responseObject) -> Void in
             print(responseObject)
             if responseObject.result.isSuccess {
@@ -24,7 +25,7 @@ class APIAgent : NSObject {/*
         }
     }
 
-    class func requestPOSTURL(_ strURL : String, params : [String : AnyObject]?, headers : [String : String]?,
+    class func requestPOSTURL(_ strURL : String, params : [String : Any]?, headers : [String : String]?,
                               success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void){
         Alamofire.request(strURL, method: .post, parameters: params, encoding: JSONEncoding.default,
                 headers: headers).responseJSON { (responseObject) -> Void in
@@ -38,5 +39,5 @@ class APIAgent : NSObject {/*
                 failure(error)
             }
         }
-    }*/
+    }
 }
