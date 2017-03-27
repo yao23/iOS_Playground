@@ -57,80 +57,44 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let baseUrl : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
         let urlStr : String = baseUrl + params
         let url = URL(string: urlStr)
-//        let urlStr : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=cruise&key=YOUR_API_KEY"
 
-    /*
-        Alamofire.request(
-                        URL(string: baseUrl)!,
-                        method: .get,
-                        parameters: ["location": lat  + "," + lon, "radius": radius, "type": type, "keyword": keyWord, "key": apiKey],
-                        encoding: JSONEncoding.default)
-                .validate()
-                .responseJSON { (response) -> Void in
-                    guard response.result.isSuccess else {
-                        print("Error while fetching restaurants: \(response.result.error)")
-//                        completion(nil)
-                        return
-                    }
+        var urlRequest = URLRequest(
+                url: url!,
+                cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                timeoutInterval: 10.0 * 1000)
+        urlRequest.httpMethod = "GET"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
 
-                    guard let value = response.result.value as? [String: Any],
-                          print("response: " + value)/*let rows = value["rows"] as? [[String: Any]]*/ else {
-                        print("Malformed data received from fetch restaurants service")
-//                        completion(nil)
-                        return
-                    }
+        let session = URLSession.shared
 
-                    print("response: \(json)")
-
-//                    let rooms = rows.flatMap({ (roomDict) -> RemoteRoom? in
-//                        return RemoteRoom(jsonData: roomDict)
-//                    })
-
-//                    completion(rooms)
-
-                }
-                */
-
-
-//            let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=500&type=restaurant&keyword=cruise&key=AIzaSyCykL88HIABtiuzvq0qebtxVkYob2lAszc")!
-
-            var urlRequest = URLRequest(
-                    url: url!,
-                    cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                    timeoutInterval: 10.0 * 1000)
-            urlRequest.httpMethod = "GET"
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-
-            let session = URLSession.shared
-
-            let task = session.dataTask(with: urlRequest)
-            { (data, response, error) -> Void in
-                guard error == nil else {
-                    print("Error while fetching remote rooms: \(error)")
-                    return
-                }
-
-                guard let data = data,
-                      let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                    print("Nil data received from fetch restaurants service")
-                    return
-                }
-
-                guard let results = json?["results"] as? [[String: Any]] else {
-                    print("Malformed data received from fetch restaurants service")
-                    return
-                }
-
-                self.restaurants = results.flatMap({ (resultDict) -> Restaurant? in
-                    return Restaurant(jsonData: resultDict)
-                })
-
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+        let task = session.dataTask(with: urlRequest)
+        { (data, response, error) -> Void in
+            guard error == nil else {
+                print("Error while fetching remote rooms: \(error)")
+                return
             }
 
-            task.resume()
+            guard let data = data,
+                  let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                print("Nil data received from fetch restaurants service")
+                return
+            }
+
+            guard let results = json?["results"] as? [[String: Any]] else {
+                print("Malformed data received from fetch restaurants service")
+                return
+            }
+
+            self.restaurants = results.flatMap({ (resultDict) -> Restaurant? in
+                return Restaurant(jsonData: resultDict)
+            })
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+
+        task.resume()
     }
 
     func getLocationService() {
