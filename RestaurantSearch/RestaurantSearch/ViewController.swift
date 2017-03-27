@@ -134,6 +134,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 "key": apiKey
         ]
 
+        Alamofire.request(baseUrl, parameters: parameters).responseObject { (response: DataResponse<RestaurantJSON>) in
+            guard response.result.isSuccess else {
+                print("Error while fetching restaurants: \(response.result.error)")
+                return
+            }
+
+            guard let value = response.result.value as? [String: Any],
+                  let results = value["results"] as? [[String: Any]] else {
+                print("Malformed data received from fetch restaurants service")
+                return
+            }
+
+            let restaurantResponse = response.result.value
+            print("Restaurant from mapper: " + restaurantResponse!.name)
+
+//            self.restaurants = results.flatMap({ (resultDict) -> Restaurant? in
+//                return Restaurant(jsonData: resultDict)
+//            })
+//
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+        }
+
         Alamofire.request(baseUrl, parameters: parameters).responseJSON { response in
             guard response.result.isSuccess else {
                 print("Error while fetching restaurants: \(response.result.error)")
@@ -145,6 +169,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("Malformed data received from fetch restaurants service")
                 return
             }
+
+            let restaurantResponse = response.result.value
+            print("Restaurant from mapper: " + restaurantResponse!.name)
 
             self.restaurants = results.flatMap({ (resultDict) -> Restaurant? in
                 return Restaurant(jsonData: resultDict)
