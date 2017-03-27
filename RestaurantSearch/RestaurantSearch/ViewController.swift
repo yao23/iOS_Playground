@@ -109,6 +109,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let baseUrl : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 
+        // start APIAgent
+        let params: [String : Any] = [
+                "location": "\(lat),\(lon)",
+                "radius": "\(radius)",
+                "type": type,
+                "keyword": keyWord,
+                "key": apiKey
+        ]
+        APIAgent.requestGETURL(baseUrl, params: params, success: { // TODO: use APIAgent for network request
+            (jsonResponse) -> Void in
+            print("JSON Response: \(jsonResponse)")
+        }) {
+            (error) -> Void in
+            print("Error: \(error)")
+        }
+        // end APIAgent request
+
         let parameters: Parameters = [
                 "location": "\(lat),\(lon)",
                 "radius": "\(radius)",
