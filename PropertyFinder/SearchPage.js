@@ -62,11 +62,30 @@ var styles = StyleSheet.create({
   }
 });
 
+function urlForQueryAndPage(key, value, pageNumber) {
+  var data = {
+      country: 'uk',
+      pretty: '1',
+      encoding: 'json',
+      listing_type: 'buy',
+      action: 'search_listings',
+      page: pageNumber
+  };
+  data[key] = value;
+
+  var querystring = Object.keys(data)
+    .map(key => key + '=' + encodeURIComponent(data[key]))
+    .join('&');
+
+  return 'http://api.nestoria.co.uk/api?' + querystring;
+};
+
 class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchString: 'london'
+      searchString: 'london',
+      isLoading: false
     };
   }
   onSearchTextChanged(event) {
@@ -74,8 +93,21 @@ class SearchPage extends Component {
     this.setState({ searchString: event.nativeEvent.text });
     console.log(this.state.searchString);
   }
+  _executeQuery(query) {
+    console.log(query);
+    this.setState({ isLoading: true });
+  }
+
+  onSearchPressed() {
+    var query = urlForQueryAndPage('place_name', this.state.searchString, 1);
+    this._executeQuery(query);
+  }
   render() {
     console.log('SearchPage.render');
+    var spinner = this.state.isLoading ?
+      ( <ActivityIndicator
+          size='large'/> ) :
+      ( <View/>);
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
@@ -92,7 +124,11 @@ class SearchPage extends Component {
             placeholder='Search via name or postcode'/>
           <TouchableHighlight style={styles.button}
               underlayColor='#99d9f4'>
-            <Text style={styles.buttonText}>Go</Text>
+            <Text
+              style={styles.buttonText}
+              onPress={this.onSearchPressed.bind(this)}>
+              Go
+            </Text>
           </TouchableHighlight>
         </View>
         <TouchableHighlight style={styles.button}
@@ -100,6 +136,7 @@ class SearchPage extends Component {
           <Text style={styles.buttonText}>Location</Text>
         </TouchableHighlight>
         <Image source={require('./Resources/house.png')} style={styles.image}/>
+        {spinner}
       </View>
     );
   }
