@@ -1,13 +1,14 @@
 //
 //  ViewController.swift
-//  Mercari
+//  ShopMercari
+//
+//  Created by Yao Li on 5/11/17.
+//  Copyright © 2017 clouds. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet private weak var collectionView: UICollectionView!
-    fileprivate var contents: [[String: Any]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,4 +19,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
 }
+

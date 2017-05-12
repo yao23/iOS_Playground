@@ -1,12 +1,15 @@
 //
-//  MercariTests.swift
-//  MercariTests
+//  ShopMercariTests.swift
+//  ShopMercariTests
+//
+//  Created by Yao Li on 5/11/17.
+//  Copyright © 2017 clouds. All rights reserved.
 //
 
 import XCTest
-@testable import Mercari
+@testable import ShopMercari
 
-class MercariTests: XCTestCase {
+class ShopMercariTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

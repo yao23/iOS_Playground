@@ -1,6 +1,9 @@
 //
 //  AppDelegate.swift
-//  Mercari
+//  ShopMercari
+//
+//  Created by Yao Li on 5/11/17.
+//  Copyright © 2017 clouds. All rights reserved.
 //
 
 import UIKit
