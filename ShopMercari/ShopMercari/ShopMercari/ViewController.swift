@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var items : [Item] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        let dataFetchAgent = DataFetch()
+        dataFetchAgent.fetchData()
     }
 
     override func didReceiveMemoryWarning() {
