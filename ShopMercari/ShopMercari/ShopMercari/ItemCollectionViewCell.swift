@@ -18,12 +18,9 @@ class ItemCollectionViewCell: UICollectionViewCell {
     public func initData(item : Item) {
         titleLabel.text = item.name
         soldImgView.image = (item.status == "sold_out") ? UIImage(named: "sold") : nil
-//        self.insertSubview(soldImgView, aboveSubview: contentImgView)
         priceLabel.text = "$\(item.price)"
         configImg(urlString: item.photo)
         soldImgView.superview!.bringSubview(toFront: soldImgView)
-//        self.bringSubview(toFront: soldImgView)
-//        self.sendSubview(toBack: contentImgView)
     }
 
     public func configImg(urlString: String) {
@@ -37,8 +34,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
             DispatchQueue.main.async(execute: { () -> Void in
                 let image = UIImage(data: data!)
                 self.contentImgView.image = image
-//                self.sendSubview(toBack: self.contentImgView)
-//                self.bringSubview(toFront: self.soldImgView)
             })
 
         }).resume()
