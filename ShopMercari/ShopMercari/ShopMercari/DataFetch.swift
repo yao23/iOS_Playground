@@ -11,12 +11,14 @@ import Foundation
 class DataFetch: NSObject {
     var items : [Item] = []
 
-    public func fetchData() {
+    public func fetchData() -> [Item] {
         readJson()
         print("parsing json file is done")
         for item in items {
             item.printInfo()
         }
+
+        return items
     }
 
     private func readJson() {

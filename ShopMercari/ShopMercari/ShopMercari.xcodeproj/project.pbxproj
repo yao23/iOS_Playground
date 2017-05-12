@@ -20,6 +20,9 @@
 		8AA53C291EC56DF1006D9B34 /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53C271EC56DF1006D9B34 /* DataFetch.swift */; };
 		8AA53C2B1EC56EA6006D9B34 /* all.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA53C2A1EC56EA6006D9B34 /* all.json */; };
 		8AA53C2C1EC56EA6006D9B34 /* all.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA53C2A1EC56EA6006D9B34 /* all.json */; };
+		8AA53C2F1EC57F94006D9B34 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */; };
+		8AA53C301EC57F94006D9B34 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */; };
+		8AA53C311EC57F94006D9B34 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,7 @@
 		8AA53C191EC56CC6006D9B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AA53C271EC56DF1006D9B34 /* DataFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
 		8AA53C2A1EC56EA6006D9B34 /* all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all.json; sourceTree = "<group>"; };
+		8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +110,11 @@
 		8AA53BF61EC56CC6006D9B34 /* ShopMercari */ = {
 			isa = PBXGroup;
 			children = (
+				8AA53C2D1EC57AB0006D9B34 /* Controller */,
 				8AA53C2A1EC56EA6006D9B34 /* all.json */,
 				8AA53C261EC56DDA006D9B34 /* Class */,
 				8AA53C251EC56DCC006D9B34 /* Model */,
 				8AA53BF71EC56CC6006D9B34 /* AppDelegate.swift */,
-				8AA53BF91EC56CC6006D9B34 /* ViewController.swift */,
 				8AA53BFB1EC56CC6006D9B34 /* Main.storyboard */,
 				8AA53BFE1EC56CC6006D9B34 /* Assets.xcassets */,
 				8AA53C001EC56CC6006D9B34 /* LaunchScreen.storyboard */,
@@ -149,8 +153,17 @@
 			isa = PBXGroup;
 			children = (
 				8AA53C271EC56DF1006D9B34 /* DataFetch.swift */,
+				8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */,
 			);
 			name = Class;
+			sourceTree = "<group>";
+		};
+		8AA53C2D1EC57AB0006D9B34 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8AA53BF91EC56CC6006D9B34 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA53C2F1EC57F94006D9B34 /* ItemCollectionViewCell.swift in Sources */,
 				8AA53BFA1EC56CC6006D9B34 /* ViewController.swift in Sources */,
 				8AA53BF81EC56CC6006D9B34 /* AppDelegate.swift in Sources */,
 				8AA53C281EC56DF1006D9B34 /* DataFetch.swift in Sources */,
@@ -304,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AA53C291EC56DF1006D9B34 /* DataFetch.swift in Sources */,
+				8AA53C301EC57F94006D9B34 /* ItemCollectionViewCell.swift in Sources */,
 				8AA53C0D1EC56CC6006D9B34 /* ShopMercariTests.swift in Sources */,
 				623776CB852D9807C8D30F75 /* Item.swift in Sources */,
 			);
@@ -314,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AA53C181EC56CC6006D9B34 /* ShopMercariUITests.swift in Sources */,
+				8AA53C311EC57F94006D9B34 /* ItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +564,7 @@
 				8AA53C1E1EC56CC6006D9B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AA53C1F1EC56CC6006D9B34 /* Build configuration list for PBXNativeTarget "ShopMercariTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +573,7 @@
 				8AA53C211EC56CC6006D9B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AA53C221EC56CC6006D9B34 /* Build configuration list for PBXNativeTarget "ShopMercariUITests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +582,7 @@
 				8AA53C241EC56CC6006D9B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
