@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
@@ -18,6 +19,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     public func initData(item : Item) {
         titleLabel.text = item.name
         soldImgView.image = (item.status == "sold_out") ? UIImage(named: "sold") : nil
+        soldImgView.reactive.image <~ items.status
         priceLabel.text = "$\(item.price)"
         configImg(urlString: item.photo)
         soldImgView.superview!.bringSubview(toFront: soldImgView)

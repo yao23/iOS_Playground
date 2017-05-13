@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EB8AFD823FDE30A336FD54A /* Pods_ShopMercari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DC16E905051995DE5A2F4A /* Pods_ShopMercari.framework */; };
 		623776CB852D9807C8D30F75 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623778910E6DA809BFABE880 /* Item.swift */; };
 		62377ED68B98F9BAD1106183 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623778910E6DA809BFABE880 /* Item.swift */; };
+		8AA17D201EC6DFAB00EF631B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AA17D1F1EC6DFAB00EF631B /* Podfile */; };
+		8AA17D211EC6DFAB00EF631B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AA17D1F1EC6DFAB00EF631B /* Podfile */; };
+		8AA17D221EC6DFAB00EF631B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AA17D1F1EC6DFAB00EF631B /* Podfile */; };
 		8AA53BF81EC56CC6006D9B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53BF71EC56CC6006D9B34 /* AppDelegate.swift */; };
 		8AA53BFA1EC56CC6006D9B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53BF91EC56CC6006D9B34 /* ViewController.swift */; };
 		8AA53BFD1EC56CC6006D9B34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA53BFB1EC56CC6006D9B34 /* Main.storyboard */; };
@@ -43,7 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A2A32B5FFB41A5A892E918 /* Pods-ShopMercari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercari.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari.release.xcconfig"; sourceTree = "<group>"; };
 		623778910E6DA809BFABE880 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		62DC16E905051995DE5A2F4A /* Pods_ShopMercari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopMercari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA17D1F1EC6DFAB00EF631B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		8AA53BF41EC56CC6006D9B34 /* ShopMercari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopMercari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA53BF71EC56CC6006D9B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA53BF91EC56CC6006D9B34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +67,7 @@
 		8AA53C271EC56DF1006D9B34 /* DataFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
 		8AA53C2A1EC56EA6006D9B34 /* all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all.json; sourceTree = "<group>"; };
 		8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		FE0143B52F9E12301240EF81 /* Pods-ShopMercari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB8AFD823FDE30A336FD54A /* Pods_ShopMercari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,13 +96,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2144E6F53D0E15BDB48972F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62DC16E905051995DE5A2F4A /* Pods_ShopMercari.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4041C2EC81EF9AA8D7FA38D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE0143B52F9E12301240EF81 /* Pods-ShopMercari.debug.xcconfig */,
+				24A2A32B5FFB41A5A892E918 /* Pods-ShopMercari.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8AA53BEB1EC56CC6006D9B34 = {
 			isa = PBXGroup;
 			children = (
+				8AA17D1F1EC6DFAB00EF631B /* Podfile */,
 				8AA53BF61EC56CC6006D9B34 /* ShopMercari */,
 				8AA53C0B1EC56CC6006D9B34 /* ShopMercariTests */,
 				8AA53C161EC56CC6006D9B34 /* ShopMercariUITests */,
 				8AA53BF51EC56CC6006D9B34 /* Products */,
+				4041C2EC81EF9AA8D7FA38D4 /* Pods */,
+				2144E6F53D0E15BDB48972F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA53C1C1EC56CC6006D9B34 /* Build configuration list for PBXNativeTarget "ShopMercari" */;
 			buildPhases = (
+				F929EF0FDD867BA44063F984 /* [CP] Check Pods Manifest.lock */,
 				8AA53BF01EC56CC6006D9B34 /* Sources */,
 				8AA53BF11EC56CC6006D9B34 /* Frameworks */,
 				8AA53BF21EC56CC6006D9B34 /* Resources */,
+				197F82ABE3EFB45168693D4A /* [CP] Embed Pods Frameworks */,
+				67A75D93D2CCAAE2641CB9D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA17D201EC6DFAB00EF631B /* Podfile in Resources */,
 				8AA53C021EC56CC6006D9B34 /* LaunchScreen.storyboard in Resources */,
 				8AA53C2B1EC56EA6006D9B34 /* all.json in Resources */,
 				8AA53BFF1EC56CC6006D9B34 /* Assets.xcassets in Resources */,
@@ -287,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA17D211EC6DFAB00EF631B /* Podfile in Resources */,
 				8AA53C2C1EC56EA6006D9B34 /* all.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,10 +329,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA17D221EC6DFAB00EF631B /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		197F82ABE3EFB45168693D4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67A75D93D2CCAAE2641CB9D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F929EF0FDD867BA44063F984 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AA53BF01EC56CC6006D9B34 /* Sources */ = {
@@ -463,6 +546,7 @@
 		};
 		8AA53C1D1EC56CC6006D9B34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0143B52F9E12301240EF81 /* Pods-ShopMercari.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53JXDE67QG;
@@ -476,6 +560,7 @@
 		};
 		8AA53C1E1EC56CC6006D9B34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A2A32B5FFB41A5A892E918 /* Pods-ShopMercari.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53JXDE67QG;

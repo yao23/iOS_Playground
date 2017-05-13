@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E8674354A2EC4CD624FA43171C979B7 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B7302C0A1FE4F3F69346431C4C692 /* Observer.swift */; };
+		0ED964A18F59E0AC7EE300C14B8230B7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E252B28AC9A3EC68A3083732A9D5CB /* Result.swift */; };
+		31113311DC846BC0FD7D6F5E6426D171 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30D002E46F77B468937E84A44745911 /* Reactive.swift */; };
+		47C68A75D9A45B9269242EF854CA57DB /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C7DB007DD413EB0DEB56076F1168 /* Scheduler.swift */; };
+		4A17C5C96014081CD5364FC128A864AB /* ResultProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0E8876A355A4C94B678DD9AC5E914 /* ResultProtocol.swift */; };
+		4FAE03B1194A816D23B2BBA69F3F807C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B05999CBCAFF695421C58379C8E419 /* Property.swift */; };
+		59B962DAE2EC025FA96C936A1E21B519 /* Result-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D01F4FC3A55A61A01C9704CAD0242A0 /* Result-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E410DD51040C422AE15F2D7F166B616 /* Result-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C01C5E5148B0B1A13C143806DABC355 /* Result-dummy.m */; };
+		6FE9183E093B9616D7D9A928A20DDD54 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70540A45EF17C3046F3749112F65F1 /* Bag.swift */; };
+		7253EE969C5688BC1C87707272880316 /* Flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB110BB64F2A45E9B97DB8F6F4BEE60 /* Flatten.swift */; };
+		72F8C027EF2EFEFA5EE20FAF972F76BD /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCFB5400A64599F9AC54D68CABC6320 /* Atomic.swift */; };
+		7ED61D0B0A509E30F35E391F76059A12 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECEDEA5315251B62B0C936A4757AE6E /* Action.swift */; };
+		8CFA479E89BB55D52C5ABE811C67D99A /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D494FC727A62B98AD421DF8BCF4E48 /* Disposable.swift */; };
+		961A7E06ECE70E5999AF272D21DCCAA8 /* ReactiveSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17E10A024A8E36C0613BF4CE7497DD4F /* ReactiveSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C122F3BA67DF3719D48BFD40E00E658 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCF974BAFEBC792DF724875DF010D16 /* Optional.swift */; };
+		A2B70525967BFC9A20A390A9B6F38082 /* ResultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E396AAE663C5C933267EE18B81416C /* ResultExtensions.swift */; };
+		A5E082416FC10DEF123809145F8C1D95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6AC6C590BA72493B4398FB68C916E1 /* Foundation.framework */; };
+		B0F607EC767EF160A5CC661C859AFE26 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3589C065EDB9CF31B05E1B288CD5678 /* Deprecations+Removals.swift */; };
+		B42D2263CEB776C52349C033FF3F6FAE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7AE443B8391B4ABADD87AAE21E9C30 /* Event.swift */; };
+		B9873245F046E5ECFBBF4B28028B6153 /* Lifetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34DEC62AC2A0293ECD06F85316966A /* Lifetime.swift */; };
+		B9F971918667ED6FE6D15768D9BD5854 /* UnidirectionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756B479742414C231AF1E8FBDE365BF /* UnidirectionalBinding.swift */; };
+		BFDFC44E185159D3C3F519E8A642FCC5 /* ValidatingProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685E9AFCB37D2167C621786583AE0952 /* ValidatingProperty.swift */; };
+		C0ABEBD7E8E4F6B6412314BD34071519 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCDEE7CAA69947EE704BFD2BE4FA2BC /* FoundationExtensions.swift */; };
+		C35C4A8DBC8A522E67824F7AE0D831FA /* Pods-ShopMercari-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AF386DBD1DFEEF1285BEE929A78F667 /* Pods-ShopMercari-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2F3E8FEC0306A1C8966EF922E4C79AD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00731B6E7DAD95BABCBD81F4CD9AF4E5 /* Result.framework */; };
+		D99AA9FB0ADFB781B1294AFB360FA7CD /* TupleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9B233CB2FB9AA1565B459AB7D31B3 /* TupleExtensions.swift */; };
+		E543AD8F26BCA7D1E311AD68A4B37F3E /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83D614F7F2CCCD955339B35CC72EEC /* EventLogger.swift */; };
+		E9FBB5726462E0AF47410830F374C313 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467C956F079062CDD9BE9D62DCCDFB6 /* Signal.swift */; };
+		EF612F588AE4A6809B4C2B3294EC4B0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6AC6C590BA72493B4398FB68C916E1 /* Foundation.framework */; };
+		F2BFED9E5D5B28661174617875DD1861 /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3ABF0285CE2622357B52A679DC4098 /* SignalProducer.swift */; };
+		F7893927F070D946DB71CD2600F4D5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6AC6C590BA72493B4398FB68C916E1 /* Foundation.framework */; };
+		FBA0D65F76DB2A28EDBD8963B5ABF304 /* Pods-ShopMercari-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EEA48E8CC8A29C1DC294D69B2226C /* Pods-ShopMercari-dummy.m */; };
+		FE781DF195B9EE621FF6435F5842F1E1 /* ReactiveSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EC66979DDDD3574BD7CD75E84B8B9A /* ReactiveSwift-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00D806708C2711CB3657D76E530939AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32EF2F947D3CBB6E8B3BFF289B6C28E2;
+			remoteInfo = Result;
+		};
+		31BD96DEC7D70F93D3C19D0DED573328 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32EF2F947D3CBB6E8B3BFF289B6C28E2;
+			remoteInfo = Result;
+		};
+		D2E75139571F0C6D671B84641DBC207F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAACAA128DBF1403F63614D383C2330E;
+			remoteInfo = ReactiveSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00731B6E7DAD95BABCBD81F4CD9AF4E5 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0756B479742414C231AF1E8FBDE365BF /* UnidirectionalBinding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnidirectionalBinding.swift; path = Sources/UnidirectionalBinding.swift; sourceTree = "<group>"; };
+		08D494FC727A62B98AD421DF8BCF4E48 /* Disposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposable.swift; path = Sources/Disposable.swift; sourceTree = "<group>"; };
+		154B7302C0A1FE4F3F69346431C4C692 /* Observer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observer.swift; path = Sources/Observer.swift; sourceTree = "<group>"; };
+		17E10A024A8E36C0613BF4CE7497DD4F /* ReactiveSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactiveSwift-umbrella.h"; sourceTree = "<group>"; };
+		1C01C5E5148B0B1A13C143806DABC355 /* Result-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Result-dummy.m"; sourceTree = "<group>"; };
+		1CCDEE7CAA69947EE704BFD2BE4FA2BC /* FoundationExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationExtensions.swift; path = Sources/FoundationExtensions.swift; sourceTree = "<group>"; };
+		1E83D614F7F2CCCD955339B35CC72EEC /* EventLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventLogger.swift; path = Sources/EventLogger.swift; sourceTree = "<group>"; };
+		2AF386DBD1DFEEF1285BEE929A78F667 /* Pods-ShopMercari-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ShopMercari-umbrella.h"; sourceTree = "<group>"; };
+		2C34DEC62AC2A0293ECD06F85316966A /* Lifetime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lifetime.swift; path = Sources/Lifetime.swift; sourceTree = "<group>"; };
+		2F4FE906D547B1D9A50535CE3E4E98B4 /* Result-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-prefix.pch"; sourceTree = "<group>"; };
+		32EC66979DDDD3574BD7CD75E84B8B9A /* ReactiveSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReactiveSwift-dummy.m"; sourceTree = "<group>"; };
+		35E396AAE663C5C933267EE18B81416C /* ResultExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultExtensions.swift; path = Sources/ResultExtensions.swift; sourceTree = "<group>"; };
+		3ECEDEA5315251B62B0C936A4757AE6E /* Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Action.swift; path = Sources/Action.swift; sourceTree = "<group>"; };
+		4945D13C37D1D6F48A2972727E6AE67E /* Pods-ShopMercari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShopMercari.debug.xcconfig"; sourceTree = "<group>"; };
+		4EE0DE11F0FC3805350391F4A6C6E7AB /* ReactiveSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactiveSwift.xcconfig; sourceTree = "<group>"; };
+		5D01F4FC3A55A61A01C9704CAD0242A0 /* Result-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-umbrella.h"; sourceTree = "<group>"; };
+		5DCF974BAFEBC792DF724875DF010D16 /* Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = Sources/Optional.swift; sourceTree = "<group>"; };
+		685E9AFCB37D2167C621786583AE0952 /* ValidatingProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidatingProperty.swift; path = Sources/ValidatingProperty.swift; sourceTree = "<group>"; };
+		6BA87F82AF330B2019727B2648FA81AB /* Pods_ShopMercari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ShopMercari.framework; path = "Pods-ShopMercari.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D6AC6C590BA72493B4398FB68C916E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6E64B7C74E2322A1B80E8BF98CC952DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7050E2B807A0E2DAD716ADAED2455E93 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7103B6076DD2E4A32F98E0FFF7A3CABE /* Pods-ShopMercari-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ShopMercari-acknowledgements.plist"; sourceTree = "<group>"; };
+		73CBB3A513A3D292EBD6C6FD76A2ACD4 /* Pods-ShopMercari-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ShopMercari-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7B80DCA87F57166A2F3B63F7F8A7689B /* ReactiveSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactiveSwift-prefix.pch"; sourceTree = "<group>"; };
+		7F7AE443B8391B4ABADD87AAE21E9C30 /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Sources/Event.swift; sourceTree = "<group>"; };
+		81D8BC6224435FA68FE400C4A6009C1E /* Pods-ShopMercari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShopMercari.release.xcconfig"; sourceTree = "<group>"; };
+		8AB110BB64F2A45E9B97DB8F6F4BEE60 /* Flatten.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Flatten.swift; path = Sources/Flatten.swift; sourceTree = "<group>"; };
+		8DCFB5400A64599F9AC54D68CABC6320 /* Atomic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Atomic.swift; path = Sources/Atomic.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96FC8258F2E5CBE4181779122CFD27CE /* Pods-ShopMercari.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ShopMercari.modulemap"; sourceTree = "<group>"; };
+		A0D0E8876A355A4C94B678DD9AC5E914 /* ResultProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultProtocol.swift; path = Result/ResultProtocol.swift; sourceTree = "<group>"; };
+		A2BDD5C85D7B8504902D072D10AD6B01 /* Result.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Result.modulemap; sourceTree = "<group>"; };
+		A5D56B0A9B8E1D48E156F0827DFD7B0F /* Pods-ShopMercari-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ShopMercari-resources.sh"; sourceTree = "<group>"; };
+		AE3ABF0285CE2622357B52A679DC4098 /* SignalProducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SignalProducer.swift; path = Sources/SignalProducer.swift; sourceTree = "<group>"; };
+		B0E252B28AC9A3EC68A3083732A9D5CB /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Result/Result.swift; sourceTree = "<group>"; };
+		B2B05999CBCAFF695421C58379C8E419 /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Sources/Property.swift; sourceTree = "<group>"; };
+		BE70540A45EF17C3046F3749112F65F1 /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Sources/Bag.swift; sourceTree = "<group>"; };
+		C30D002E46F77B468937E84A44745911 /* Reactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reactive.swift; path = Sources/Reactive.swift; sourceTree = "<group>"; };
+		C3589C065EDB9CF31B05E1B288CD5678 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Deprecations+Removals.swift"; path = "Sources/Deprecations+Removals.swift"; sourceTree = "<group>"; };
+		C5E5C7DB007DD413EB0DEB56076F1168 /* Scheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scheduler.swift; path = Sources/Scheduler.swift; sourceTree = "<group>"; };
+		D467C956F079062CDD9BE9D62DCCDFB6 /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signal.swift; path = Sources/Signal.swift; sourceTree = "<group>"; };
+		D75070878FCE0627C6EF8DA9E8316246 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB3EEA48E8CC8A29C1DC294D69B2226C /* Pods-ShopMercari-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ShopMercari-dummy.m"; sourceTree = "<group>"; };
+		DCF838EA76977AF949DE5909EE1BF57E /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B3B695AB2C8B40CDBBD8968C51EBB1 /* Result.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Result.xcconfig; sourceTree = "<group>"; };
+		F28C81CD8125AEEEE95594D1A8723EAA /* ReactiveSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ReactiveSwift.modulemap; sourceTree = "<group>"; };
+		F4E4D33E086D79235C6FD5A2743264D3 /* ReactiveSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReactiveSwift.framework; path = ReactiveSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A9B233CB2FB9AA1565B459AB7D31B3 /* TupleExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TupleExtensions.swift; path = Sources/TupleExtensions.swift; sourceTree = "<group>"; };
+		F8D7A58AB3A4A2A73A433B4CC9C64179 /* Pods-ShopMercari-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ShopMercari-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		680BE0B060F21CD5EFDB18D6F4BC2002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7893927F070D946DB71CD2600F4D5C0 /* Foundation.framework in Frameworks */,
+				D2F3E8FEC0306A1C8966EF922E4C79AD /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4DD7AE4A66F6D86785687775E945498 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF612F588AE4A6809B4C2B3294EC4B0C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F36F91166AC3747366D4D3BAAE8E86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5E082416FC10DEF123809145F8C1D95 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BAAA66BFC8AD20E7ED66CBAE6FAFC3E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D75070878FCE0627C6EF8DA9E8316246 /* Info.plist */,
+				F28C81CD8125AEEEE95594D1A8723EAA /* ReactiveSwift.modulemap */,
+				4EE0DE11F0FC3805350391F4A6C6E7AB /* ReactiveSwift.xcconfig */,
+				32EC66979DDDD3574BD7CD75E84B8B9A /* ReactiveSwift-dummy.m */,
+				7B80DCA87F57166A2F3B63F7F8A7689B /* ReactiveSwift-prefix.pch */,
+				17E10A024A8E36C0613BF4CE7497DD4F /* ReactiveSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ReactiveSwift";
+			sourceTree = "<group>";
+		};
+		355DB699FD15F365BD74BCD7AA01C14F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BA87F82AF330B2019727B2648FA81AB /* Pods_ShopMercari.framework */,
+				F4E4D33E086D79235C6FD5A2743264D3 /* ReactiveSwift.framework */,
+				DCF838EA76977AF949DE5909EE1BF57E /* Result.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E558959B39EC70315F65261DE54A29F2 /* Frameworks */,
+				FEDC1229F25CF847EE89660E4EB94573 /* Pods */,
+				355DB699FD15F365BD74BCD7AA01C14F /* Products */,
+				C7C71F9E01F0FAFA210BE2218CE89178 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		88332B6AB5B06C66DE43B6D49F021F0E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6D6AC6C590BA72493B4398FB68C916E1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		91456B2FCC128FC493C5BA54B1CC865A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E64B7C74E2322A1B80E8BF98CC952DD /* Info.plist */,
+				A2BDD5C85D7B8504902D072D10AD6B01 /* Result.modulemap */,
+				E0B3B695AB2C8B40CDBBD8968C51EBB1 /* Result.xcconfig */,
+				1C01C5E5148B0B1A13C143806DABC355 /* Result-dummy.m */,
+				2F4FE906D547B1D9A50535CE3E4E98B4 /* Result-prefix.pch */,
+				5D01F4FC3A55A61A01C9704CAD0242A0 /* Result-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Result";
+			sourceTree = "<group>";
+		};
+		94B1F0590BC5FDC27A8850E888DDE35F /* ReactiveSwift */ = {
+			isa = PBXGroup;
+			children = (
+				3ECEDEA5315251B62B0C936A4757AE6E /* Action.swift */,
+				8DCFB5400A64599F9AC54D68CABC6320 /* Atomic.swift */,
+				BE70540A45EF17C3046F3749112F65F1 /* Bag.swift */,
+				C3589C065EDB9CF31B05E1B288CD5678 /* Deprecations+Removals.swift */,
+				08D494FC727A62B98AD421DF8BCF4E48 /* Disposable.swift */,
+				7F7AE443B8391B4ABADD87AAE21E9C30 /* Event.swift */,
+				1E83D614F7F2CCCD955339B35CC72EEC /* EventLogger.swift */,
+				8AB110BB64F2A45E9B97DB8F6F4BEE60 /* Flatten.swift */,
+				1CCDEE7CAA69947EE704BFD2BE4FA2BC /* FoundationExtensions.swift */,
+				2C34DEC62AC2A0293ECD06F85316966A /* Lifetime.swift */,
+				154B7302C0A1FE4F3F69346431C4C692 /* Observer.swift */,
+				5DCF974BAFEBC792DF724875DF010D16 /* Optional.swift */,
+				B2B05999CBCAFF695421C58379C8E419 /* Property.swift */,
+				C30D002E46F77B468937E84A44745911 /* Reactive.swift */,
+				35E396AAE663C5C933267EE18B81416C /* ResultExtensions.swift */,
+				C5E5C7DB007DD413EB0DEB56076F1168 /* Scheduler.swift */,
+				D467C956F079062CDD9BE9D62DCCDFB6 /* Signal.swift */,
+				AE3ABF0285CE2622357B52A679DC4098 /* SignalProducer.swift */,
+				F6A9B233CB2FB9AA1565B459AB7D31B3 /* TupleExtensions.swift */,
+				0756B479742414C231AF1E8FBDE365BF /* UnidirectionalBinding.swift */,
+				685E9AFCB37D2167C621786583AE0952 /* ValidatingProperty.swift */,
+				1BAAA66BFC8AD20E7ED66CBAE6FAFC3E /* Support Files */,
+			);
+			name = ReactiveSwift;
+			path = ReactiveSwift;
+			sourceTree = "<group>";
+		};
+		C7C71F9E01F0FAFA210BE2218CE89178 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F966101A0C32A8D2B4BDEB36B75484E2 /* Pods-ShopMercari */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		DB1AD8031694E4DEDD9EDF2E08CD88ED /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				B0E252B28AC9A3EC68A3083732A9D5CB /* Result.swift */,
+				A0D0E8876A355A4C94B678DD9AC5E914 /* ResultProtocol.swift */,
+				91456B2FCC128FC493C5BA54B1CC865A /* Support Files */,
+			);
+			name = Result;
+			path = Result;
+			sourceTree = "<group>";
+		};
+		E558959B39EC70315F65261DE54A29F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00731B6E7DAD95BABCBD81F4CD9AF4E5 /* Result.framework */,
+				88332B6AB5B06C66DE43B6D49F021F0E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F966101A0C32A8D2B4BDEB36B75484E2 /* Pods-ShopMercari */ = {
+			isa = PBXGroup;
+			children = (
+				7050E2B807A0E2DAD716ADAED2455E93 /* Info.plist */,
+				96FC8258F2E5CBE4181779122CFD27CE /* Pods-ShopMercari.modulemap */,
+				73CBB3A513A3D292EBD6C6FD76A2ACD4 /* Pods-ShopMercari-acknowledgements.markdown */,
+				7103B6076DD2E4A32F98E0FFF7A3CABE /* Pods-ShopMercari-acknowledgements.plist */,
+				DB3EEA48E8CC8A29C1DC294D69B2226C /* Pods-ShopMercari-dummy.m */,
+				F8D7A58AB3A4A2A73A433B4CC9C64179 /* Pods-ShopMercari-frameworks.sh */,
+				A5D56B0A9B8E1D48E156F0827DFD7B0F /* Pods-ShopMercari-resources.sh */,
+				2AF386DBD1DFEEF1285BEE929A78F667 /* Pods-ShopMercari-umbrella.h */,
+				4945D13C37D1D6F48A2972727E6AE67E /* Pods-ShopMercari.debug.xcconfig */,
+				81D8BC6224435FA68FE400C4A6009C1E /* Pods-ShopMercari.release.xcconfig */,
+			);
+			name = "Pods-ShopMercari";
+			path = "Target Support Files/Pods-ShopMercari";
+			sourceTree = "<group>";
+		};
+		FEDC1229F25CF847EE89660E4EB94573 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94B1F0590BC5FDC27A8850E888DDE35F /* ReactiveSwift */,
+				DB1AD8031694E4DEDD9EDF2E08CD88ED /* Result */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		08E430E6C06B087333D7F7E4C0AC88FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C35C4A8DBC8A522E67824F7AE0D831FA /* Pods-ShopMercari-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE2F29BD84700A08B0E15A0F839510CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				961A7E06ECE70E5999AF272D21DCCAA8 /* ReactiveSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C22C0D33EBFFD75B1BA874B728B997ED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59B962DAE2EC025FA96C936A1E21B519 /* Result-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0BE866D9A26FD3E90297025BD994F5FD /* Pods-ShopMercari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B787EF60FC1DFD274F21CF09C7A8233 /* Build configuration list for PBXNativeTarget "Pods-ShopMercari" */;
+			buildPhases = (
+				7BEE1A0592C37BE8AE24BC4DD89D1E9C /* Sources */,
+				A4DD7AE4A66F6D86785687775E945498 /* Frameworks */,
+				08E430E6C06B087333D7F7E4C0AC88FD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ADD1C3D17B44F7A37787F71DF621CF7 /* PBXTargetDependency */,
+				BC8D93A51A9A411FB335DE1C3C7FBDFB /* PBXTargetDependency */,
+			);
+			name = "Pods-ShopMercari";
+			productName = "Pods-ShopMercari";
+			productReference = 6BA87F82AF330B2019727B2648FA81AB /* Pods_ShopMercari.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		32EF2F947D3CBB6E8B3BFF289B6C28E2 /* Result */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10EBC8432FFFEDC5FEC7672EAF596DE7 /* Build configuration list for PBXNativeTarget "Result" */;
+			buildPhases = (
+				D368ADDFE42E107E65205931D4F773FC /* Sources */,
+				E6F36F91166AC3747366D4D3BAAE8E86 /* Frameworks */,
+				C22C0D33EBFFD75B1BA874B728B997ED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Result;
+			productName = Result;
+			productReference = DCF838EA76977AF949DE5909EE1BF57E /* Result.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AAACAA128DBF1403F63614D383C2330E /* ReactiveSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1882AA8DEE3C17C94EDE89BECE353C7C /* Build configuration list for PBXNativeTarget "ReactiveSwift" */;
+			buildPhases = (
+				01657189EE5F815A3FF41C66F3F140A8 /* Sources */,
+				680BE0B060F21CD5EFDB18D6F4BC2002 /* Frameworks */,
+				AE2F29BD84700A08B0E15A0F839510CF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F348C2E771E60E08B754D3B28E652B22 /* PBXTargetDependency */,
+			);
+			name = ReactiveSwift;
+			productName = ReactiveSwift;
+			productReference = F4E4D33E086D79235C6FD5A2743264D3 /* ReactiveSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 355DB699FD15F365BD74BCD7AA01C14F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0BE866D9A26FD3E90297025BD994F5FD /* Pods-ShopMercari */,
+				AAACAA128DBF1403F63614D383C2330E /* ReactiveSwift */,
+				32EF2F947D3CBB6E8B3BFF289B6C28E2 /* Result */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01657189EE5F815A3FF41C66F3F140A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ED61D0B0A509E30F35E391F76059A12 /* Action.swift in Sources */,
+				72F8C027EF2EFEFA5EE20FAF972F76BD /* Atomic.swift in Sources */,
+				6FE9183E093B9616D7D9A928A20DDD54 /* Bag.swift in Sources */,
+				B0F607EC767EF160A5CC661C859AFE26 /* Deprecations+Removals.swift in Sources */,
+				8CFA479E89BB55D52C5ABE811C67D99A /* Disposable.swift in Sources */,
+				B42D2263CEB776C52349C033FF3F6FAE /* Event.swift in Sources */,
+				E543AD8F26BCA7D1E311AD68A4B37F3E /* EventLogger.swift in Sources */,
+				7253EE969C5688BC1C87707272880316 /* Flatten.swift in Sources */,
+				C0ABEBD7E8E4F6B6412314BD34071519 /* FoundationExtensions.swift in Sources */,
+				B9873245F046E5ECFBBF4B28028B6153 /* Lifetime.swift in Sources */,
+				0E8674354A2EC4CD624FA43171C979B7 /* Observer.swift in Sources */,
+				9C122F3BA67DF3719D48BFD40E00E658 /* Optional.swift in Sources */,
+				4FAE03B1194A816D23B2BBA69F3F807C /* Property.swift in Sources */,
+				31113311DC846BC0FD7D6F5E6426D171 /* Reactive.swift in Sources */,
+				FE781DF195B9EE621FF6435F5842F1E1 /* ReactiveSwift-dummy.m in Sources */,
+				A2B70525967BFC9A20A390A9B6F38082 /* ResultExtensions.swift in Sources */,
+				47C68A75D9A45B9269242EF854CA57DB /* Scheduler.swift in Sources */,
+				E9FBB5726462E0AF47410830F374C313 /* Signal.swift in Sources */,
+				F2BFED9E5D5B28661174617875DD1861 /* SignalProducer.swift in Sources */,
+				D99AA9FB0ADFB781B1294AFB360FA7CD /* TupleExtensions.swift in Sources */,
+				B9F971918667ED6FE6D15768D9BD5854 /* UnidirectionalBinding.swift in Sources */,
+				BFDFC44E185159D3C3F519E8A642FCC5 /* ValidatingProperty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BEE1A0592C37BE8AE24BC4DD89D1E9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA0D65F76DB2A28EDBD8963B5ABF304 /* Pods-ShopMercari-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D368ADDFE42E107E65205931D4F773FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E410DD51040C422AE15F2D7F166B616 /* Result-dummy.m in Sources */,
+				0ED964A18F59E0AC7EE300C14B8230B7 /* Result.swift in Sources */,
+				4A17C5C96014081CD5364FC128A864AB /* ResultProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3ADD1C3D17B44F7A37787F71DF621CF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReactiveSwift;
+			target = AAACAA128DBF1403F63614D383C2330E /* ReactiveSwift */;
+			targetProxy = D2E75139571F0C6D671B84641DBC207F /* PBXContainerItemProxy */;
+		};
+		BC8D93A51A9A411FB335DE1C3C7FBDFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Result;
+			target = 32EF2F947D3CBB6E8B3BFF289B6C28E2 /* Result */;
+			targetProxy = 00D806708C2711CB3657D76E530939AD /* PBXContainerItemProxy */;
+		};
+		F348C2E771E60E08B754D3B28E652B22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Result;
+			target = 32EF2F947D3CBB6E8B3BFF289B6C28E2 /* Result */;
+			targetProxy = 31BD96DEC7D70F93D3C19D0DED573328 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		17DC6CD36962E496CF77B2B5C78F38FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE0DE11F0FC3805350391F4A6C6E7AB /* ReactiveSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReactiveSwift/ReactiveSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactiveSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReactiveSwift/ReactiveSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ReactiveSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		218A380EB4344356E8AD523E064AAB16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B3B695AB2C8B40CDBBD8968C51EBB1 /* Result.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Result/Result-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Result/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Result/Result.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Result;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2A71AD611CF63BD17E04415702A14A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE0DE11F0FC3805350391F4A6C6E7AB /* ReactiveSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReactiveSwift/ReactiveSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactiveSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReactiveSwift/ReactiveSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ReactiveSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B7FEF97E8AA54C522E24C00B2F6DE7E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81D8BC6224435FA68FE400C4A6009C1E /* Pods-ShopMercari.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ShopMercari/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ShopMercari/Pods-ShopMercari.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ShopMercari;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B9068B07844543FAF30ACA19C8F8468A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B3B695AB2C8B40CDBBD8968C51EBB1 /* Result.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Result/Result-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Result/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Result/Result.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Result;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DADA139AE8CEB109701F63889EA16A59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4945D13C37D1D6F48A2972727E6AE67E /* Pods-ShopMercari.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ShopMercari/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ShopMercari/Pods-ShopMercari.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ShopMercari;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10EBC8432FFFEDC5FEC7672EAF596DE7 /* Build configuration list for PBXNativeTarget "Result" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				218A380EB4344356E8AD523E064AAB16 /* Debug */,
+				B9068B07844543FAF30ACA19C8F8468A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1882AA8DEE3C17C94EDE89BECE353C7C /* Build configuration list for PBXNativeTarget "ReactiveSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17DC6CD36962E496CF77B2B5C78F38FB /* Debug */,
+				2A71AD611CF63BD17E04415702A14A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
+				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B787EF60FC1DFD274F21CF09C7A8233 /* Build configuration list for PBXNativeTarget "Pods-ShopMercari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DADA139AE8CEB109701F63889EA16A59 /* Debug */,
+				B7FEF97E8AA54C522E24C00B2F6DE7E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
