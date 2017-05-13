@@ -4,4 +4,15 @@ use_frameworks!
 
 target 'ShopMercari' do
   pod 'ReactiveSwift', '~> 1.1'
+  pod 'ReactiveCocoa', '~> 5.0.0'
+  end
+
+target 'ShopMercariUITests' do
+  pod 'ReactiveSwift', '~> 1.1'
+  pod 'ReactiveCocoa', '~> 5.0.0'
+end
+
+target 'ShopMercariTests' do
+  pod 'ReactiveSwift', '~> 1.1'
+  pod 'ReactiveCocoa', '~> 5.0.0'
 end

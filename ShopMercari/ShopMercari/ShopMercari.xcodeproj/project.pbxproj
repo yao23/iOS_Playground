@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD05920F22BDD98918C05CF /* Pods_ShopMercariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05E15C76C555D9A0AE97E5B /* Pods_ShopMercariUITests.framework */; };
 		0EB8AFD823FDE30A336FD54A /* Pods_ShopMercari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DC16E905051995DE5A2F4A /* Pods_ShopMercari.framework */; };
+		26FC78AC9376B9494521E5F0 /* Pods_ShopMercariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295810D621CABEB74E8C23DA /* Pods_ShopMercariTests.framework */; };
 		623776CB852D9807C8D30F75 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623778910E6DA809BFABE880 /* Item.swift */; };
 		62377ED68B98F9BAD1106183 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623778910E6DA809BFABE880 /* Item.swift */; };
 		8AA17D201EC6DFAB00EF631B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AA17D1F1EC6DFAB00EF631B /* Podfile */; };
 		8AA17D211EC6DFAB00EF631B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AA17D1F1EC6DFAB00EF631B /* Podfile */; };
 		8AA17D221EC6DFAB00EF631B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8AA17D1F1EC6DFAB00EF631B /* Podfile */; };
+		8AA17D241EC6E26500EF631B /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA17D231EC6E26500EF631B /* ReactiveSwift.framework */; };
 		8AA53BF81EC56CC6006D9B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53BF71EC56CC6006D9B34 /* AppDelegate.swift */; };
 		8AA53BFA1EC56CC6006D9B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA53BF91EC56CC6006D9B34 /* ViewController.swift */; };
 		8AA53BFD1EC56CC6006D9B34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA53BFB1EC56CC6006D9B34 /* Main.storyboard */; };
@@ -47,10 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0419C1696C9A256FC12BC480 /* Pods-ShopMercariUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercariUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercariUITests/Pods-ShopMercariUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0EA6AFD03E193745EC0B1D05 /* Pods-ShopMercariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercariTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercariTests/Pods-ShopMercariTests.debug.xcconfig"; sourceTree = "<group>"; };
 		24A2A32B5FFB41A5A892E918 /* Pods-ShopMercari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercari.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari.release.xcconfig"; sourceTree = "<group>"; };
+		295810D621CABEB74E8C23DA /* Pods_ShopMercariTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopMercariTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D87A8B90BE284055E54083 /* Pods-ShopMercariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercariTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercariTests/Pods-ShopMercariTests.release.xcconfig"; sourceTree = "<group>"; };
 		623778910E6DA809BFABE880 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		62DC16E905051995DE5A2F4A /* Pods_ShopMercari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopMercari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA17D1F1EC6DFAB00EF631B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8AA17D231EC6E26500EF631B /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ShopMercari-embvxfxwlcyacxfljabwhwvthrxs/Build/Products/Debug-iphonesimulator/ReactiveSwift/ReactiveSwift.framework"; sourceTree = "<group>"; };
 		8AA53BF41EC56CC6006D9B34 /* ShopMercari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopMercari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA53BF71EC56CC6006D9B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA53BF91EC56CC6006D9B34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 		8AA53C271EC56DF1006D9B34 /* DataFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
 		8AA53C2A1EC56EA6006D9B34 /* all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all.json; sourceTree = "<group>"; };
 		8AA53C2E1EC57F94006D9B34 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		A05E15C76C555D9A0AE97E5B /* Pods_ShopMercariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopMercariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF979DCC83926B37322BCE18 /* Pods-ShopMercariUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercariUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercariUITests/Pods-ShopMercariUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FE0143B52F9E12301240EF81 /* Pods-ShopMercari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopMercari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA17D241EC6E26500EF631B /* ReactiveSwift.framework in Frameworks */,
 				0EB8AFD823FDE30A336FD54A /* Pods_ShopMercari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FC78AC9376B9494521E5F0 /* Pods_ShopMercariTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD05920F22BDD98918C05CF /* Pods_ShopMercariUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +112,10 @@
 		2144E6F53D0E15BDB48972F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AA17D231EC6E26500EF631B /* ReactiveSwift.framework */,
 				62DC16E905051995DE5A2F4A /* Pods_ShopMercari.framework */,
+				295810D621CABEB74E8C23DA /* Pods_ShopMercariTests.framework */,
+				A05E15C76C555D9A0AE97E5B /* Pods_ShopMercariUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +125,10 @@
 			children = (
 				FE0143B52F9E12301240EF81 /* Pods-ShopMercari.debug.xcconfig */,
 				24A2A32B5FFB41A5A892E918 /* Pods-ShopMercari.release.xcconfig */,
+				0EA6AFD03E193745EC0B1D05 /* Pods-ShopMercariTests.debug.xcconfig */,
+				31D87A8B90BE284055E54083 /* Pods-ShopMercariTests.release.xcconfig */,
+				0419C1696C9A256FC12BC480 /* Pods-ShopMercariUITests.debug.xcconfig */,
+				DF979DCC83926B37322BCE18 /* Pods-ShopMercariUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -222,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA53C1F1EC56CC6006D9B34 /* Build configuration list for PBXNativeTarget "ShopMercariTests" */;
 			buildPhases = (
+				E1DE2E96B8F208D558167115 /* [CP] Check Pods Manifest.lock */,
 				8AA53C041EC56CC6006D9B34 /* Sources */,
 				8AA53C051EC56CC6006D9B34 /* Frameworks */,
 				8AA53C061EC56CC6006D9B34 /* Resources */,
+				EE723249D1B9E3646DFCF366 /* [CP] Embed Pods Frameworks */,
+				BBA4F546BBCF5F1BC2AB5C68 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA53C221EC56CC6006D9B34 /* Build configuration list for PBXNativeTarget "ShopMercariUITests" */;
 			buildPhases = (
+				B6552634A128A71F66BCD950 /* [CP] Check Pods Manifest.lock */,
 				8AA53C0F1EC56CC6006D9B34 /* Sources */,
 				8AA53C101EC56CC6006D9B34 /* Frameworks */,
 				8AA53C111EC56CC6006D9B34 /* Resources */,
+				DD090D2E1C96C2393549C354 /* [CP] Embed Pods Frameworks */,
+				723BB8A06FD84EDB5EAD7C34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +390,96 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercari/Pods-ShopMercari-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		723BB8A06FD84EDB5EAD7C34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercariUITests/Pods-ShopMercariUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6552634A128A71F66BCD950 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BBA4F546BBCF5F1BC2AB5C68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercariTests/Pods-ShopMercariTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD090D2E1C96C2393549C354 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercariUITests/Pods-ShopMercariUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1DE2E96B8F208D558167115 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE723249D1B9E3646DFCF366 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopMercariTests/Pods-ShopMercariTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F929EF0FDD867BA44063F984 /* [CP] Check Pods Manifest.lock */ = {
@@ -574,6 +690,7 @@
 		};
 		8AA53C201EC56CC6006D9B34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EA6AFD03E193745EC0B1D05 /* Pods-ShopMercariTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -589,6 +706,7 @@
 		};
 		8AA53C211EC56CC6006D9B34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D87A8B90BE284055E54083 /* Pods-ShopMercariTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +722,7 @@
 		};
 		8AA53C231EC56CC6006D9B34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0419C1696C9A256FC12BC480 /* Pods-ShopMercariUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 53JXDE67QG;
@@ -618,6 +737,7 @@
 		};
 		8AA53C241EC56CC6006D9B34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF979DCC83926B37322BCE18 /* Pods-ShopMercariUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 53JXDE67QG;
