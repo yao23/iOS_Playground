@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var items : [Item] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
 
     func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : ItemCollectionViewCell =
                 collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for:indexPath as IndexPath) as! ItemCollectionViewCell
         // Configure the cell
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: UICollectionViewDelegate
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("click at item index: \(indexPath.row)")
         let item : Item? = items[indexPath.row]
         print("click at item: ")

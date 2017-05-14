@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import ShopMercari
 
 class ShopMercariTests: XCTestCase {
@@ -62,5 +63,12 @@ class ShopMercariTests: XCTestCase {
     func testSUT_ShouldSetCollectionViewDataSource() {
 
         XCTAssertNotNil(systemUnderTest.collectionView.dataSource)
+    }
+
+    func testSUT_ConformsToCollectionViewDataSource() {
+
+        XCTAssert(systemUnderTest.conforms(to: UICollectionViewDataSource.self))
+        XCTAssertTrue(systemUnderTest.responds(to: #selector(systemUnderTest.collectionView(_:numberOfItemsInSection:))))
+//        XCTAssertTrue(systemUnderTest.responds(to: #selector(systemUnderTest.collectionView(_:cellForItemAtIndexPath:))))
     }
 }
