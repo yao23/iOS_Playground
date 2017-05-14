@@ -58,4 +58,9 @@ class ShopMercariTests: XCTestCase {
 
         XCTAssertNotNil(systemUnderTest.items)
     }
+
+    func testSUT_ShouldSetCollectionViewDataSource() {
+
+        XCTAssertNotNil(systemUnderTest.collectionView.dataSource)
+    }
 }
