@@ -10,10 +10,21 @@ import XCTest
 @testable import ShopMercari
 
 class ShopMercariTests: XCTestCase {
+
+    var systemUnderTest: ViewController!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        //get the storyboard the ViewController under test is inside
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        //get the ViewController we want to test from the storyboard (note the identifier is the id explicitly set in the identity inspector)
+        systemUnderTest = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+
+        //load view hierarchy
+        _ = systemUnderTest.view
     }
     
     override func tearDown() {
@@ -32,5 +43,9 @@ class ShopMercariTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
+    func testSUT_CanInstantiateViewController() {
+
+        XCTAssertNotNil(systemUnderTest)
+    }
 }
