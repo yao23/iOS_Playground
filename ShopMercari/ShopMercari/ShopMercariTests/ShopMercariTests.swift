@@ -69,11 +69,17 @@ class ShopMercariTests: XCTestCase {
 
         XCTAssert(systemUnderTest.conforms(to: UICollectionViewDataSource.self))
         XCTAssertTrue(systemUnderTest.responds(to: #selector(systemUnderTest.collectionView(_:numberOfItemsInSection:))))
-//        XCTAssertTrue(systemUnderTest.responds(to: #selector(systemUnderTest.collectionView(_:cellForItemAtIndexPath:)))) // cellForItemAt indexPath
+        XCTAssertTrue(systemUnderTest.responds(to: #selector(systemUnderTest.collectionView(_:cellForItemAt:)))) // cellForItemAt indexPath
     }
 
     func testSUT_ShouldSetCollectionViewDelegate() {
 
         XCTAssertNotNil(systemUnderTest.collectionView.delegate)
+    }
+
+    func testSUT_ConformsToCollectionViewDelegate() {
+
+        XCTAssert(systemUnderTest.conforms(to: UICollectionViewDelegate.self))
+        XCTAssertTrue(systemUnderTest.responds(to: #selector(systemUnderTest.collectionView(_:didSelectItemAt:))))
     }
 }
