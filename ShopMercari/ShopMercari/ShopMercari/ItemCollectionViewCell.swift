@@ -24,6 +24,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
         priceLabel.text = "$\(item.price)"
         configImg(urlString: item.photo)
         soldImgView.superview!.bringSubview(toFront: soldImgView)
+
+        item.acceptData(status: item.status)
     }
 
     public func configImg(urlString: String) {

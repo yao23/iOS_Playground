@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import ReactiveSwift
+import enum Result.NoError
 
 class Item: NSObject {
     var id : String // "id": "mmen1"
@@ -26,5 +28,15 @@ class Item: NSObject {
 
     func printInfo() {
         print("Item: \(id), \(name), \(status), \(numLikes), \(numComments), \(price), \(photo)")
+    }
+
+    func acceptData(status: String) {
+        let sp = SignalProducer<String, NoError> { sink, disposable in
+            sink.send(value: status)
+        }
+
+        sp.startWithValues { (status: String) in
+            print("item status: " + status)
+        }
     }
 }
