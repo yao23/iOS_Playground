@@ -53,4 +53,9 @@ class ShopMercariTests: XCTestCase {
 
         XCTAssertNotNil(systemUnderTest.collectionView)
     }
+
+    func testSUT_HasItemsForCollectionView() {
+
+        XCTAssertNotNil(systemUnderTest.items)
+    }
 }
