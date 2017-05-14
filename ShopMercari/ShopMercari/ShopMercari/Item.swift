@@ -25,6 +25,6 @@ class Item: NSObject {
     }
 
     func printInfo() {
-        print("Restaurant: \(id), \(name), \(status), \(numLikes), \(numComments), \(price), \(photo)")
+        print("Item: \(id), \(name), \(status), \(numLikes), \(numComments), \(price), \(photo)")
     }
 }
