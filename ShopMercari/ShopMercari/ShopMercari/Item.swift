@@ -15,6 +15,7 @@ class Item: NSObject {
     var numComments: Int // "num_comments": 59
     var price: Int // "price": 51
     var photo: String // "photo": "https://dummyimage.com/400x400/000/fff?text=men1"
+    var sp: SignalProducer<String, NoError>
 
     init(jsonData : [String: Any]) {
         id = jsonData["id"] as! String
@@ -24,17 +25,23 @@ class Item: NSObject {
         numComments = jsonData["num_comments"] as! Int
         price = jsonData["price"] as! Int
         photo = jsonData["photo"] as! String
+
+        sp = SignalProducer<String, NoError> { sink, disposable in
+            sink.send(value: (jsonData["status"] as! String))
+        }
     }
 
     func printInfo() {
         print("Item: \(id), \(name), \(status), \(numLikes), \(numComments), \(price), \(photo)")
     }
 
-    func acceptData(status: String) {
-        let sp = SignalProducer<String, NoError> { sink, disposable in
+    func acceptStatus(status: String) {
+        sp = SignalProducer<String, NoError> { sink, disposable in
             sink.send(value: status)
         }
+    }
 
+    func returnStatus() {
         sp.startWithValues { (status: String) in
             print("item status: " + status)
         }

@@ -13,10 +13,6 @@ class DataFetch: NSObject {
 
     public func fetchData() -> [Item] {
         readJson()
-        print("parsing json file is done")
-//        for item in items {
-//            item.printInfo()
-//        }
 
         return items
     }

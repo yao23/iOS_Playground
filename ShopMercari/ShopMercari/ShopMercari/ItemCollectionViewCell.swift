@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveSwift
+import ReactiveCocoa
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
@@ -18,14 +19,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
     public func initData(item : Item) {
         titleLabel.text = item.name
-//        titleLabel.reactive.text <~ item.name
-        soldImgView.image = (item.status == "sold_out") ? UIImage(named: "sold") : nil
-//        soldImgView.reactive.image <~ items.status
         priceLabel.text = "$\(item.price)"
         configImg(urlString: item.photo)
         soldImgView.superview!.bringSubview(toFront: soldImgView)
 
-        item.acceptData(status: item.status)
+        item.sp.startWithValues { (status: String) in
+            self.soldImgView.image = (status == "sold_out") ? UIImage(named: "sold") : nil
+        }
     }
 
     public func configImg(urlString: String) {
